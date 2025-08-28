@@ -1,6 +1,6 @@
 ----------------------------------
--- °Å¹Ì±¼ 3Ãş°ú º¸½º·ë °ü·Ã ÀüºÎ
---  2012.2.3 ±è¿ë¿í
+-- ê±°ë¯¸êµ´ 3ì¸µê³¼ ë³´ìŠ¤ë£¸ ê´€ë ¨ ì „ë¶€
+--  2012.2.3 ê¹€ìš©ìš±
 ----------------------------------
 define lair_time 1200
 define lair_enter_wait_time 300
@@ -9,7 +9,7 @@ define access_limit_time 3600
 
 quest spider_dungeon_3floor_boss begin
 	state start begin
-	--2, ´øÀü ³¡ ½Ã°£.
+	--2, ë˜ì „ ë ì‹œê°„.
 		when spider_end_timer.server_timer with game.get_event_flag("spider_dead"..get_channel_id()) == 0 begin  --
 			warp_all_in_area_to_area(82700, 612700, 93700,625700, 69100, 614800, 69100, 614800)
 			game.set_event_flag("spider_lair_ongoing_"..get_channel_id(),0)
@@ -36,7 +36,7 @@ quest spider_dungeon_3floor_boss begin
 	end
 
 	state step1 begin
-		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --Å×½ºÆ®¿ë
+		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --í…ŒìŠ¤íŠ¸ìš©
 			set_state(start)
 			say(locale.spider_dungeon_3floor_boss.say_2)
 		end
@@ -45,7 +45,7 @@ quest spider_dungeon_3floor_boss begin
 			say(locale.spider_dungeon_3floor_boss.say_1)
 		end
 		
-		when 20355.chat.locale.spider_dungeon_3floor_boss.title_4 begin   --°æºñ´ëÀå¿¡°Ô ¸»À» °É¾î Äù½ºÆ®¸¦ ½ÃÀÛÇÑ´Ù.
+		when 20355.chat.locale.spider_dungeon_3floor_boss.title_4 begin   --ê²½ë¹„ëŒ€ì¥ì—ê²Œ ë§ì„ ê±¸ì–´ í€˜ìŠ¤íŠ¸ë¥¼ ì‹œì‘í•œë‹¤.
 			
 			say_title(mob_name(20355)) 
 			----"12345678901234567890123456789012345678901234567890"|
@@ -54,8 +54,8 @@ quest spider_dungeon_3floor_boss begin
 		end
 	end
 
-	state step2 begin --ºñ¼®¿¡ Å¹º»À» ¶ß·¯ °¡¾ßÇÑ´Ù.
-		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --Å×½ºÆ®¿ë
+	state step2 begin --ë¹„ì„ì— íƒë³¸ì„ ëœ¨ëŸ¬ ê°€ì•¼í•œë‹¤.
+		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --í…ŒìŠ¤íŠ¸ìš©
 			set_state(start)
 			say(locale.spider_dungeon_3floor_boss.say_2)
 		end
@@ -63,7 +63,7 @@ quest spider_dungeon_3floor_boss begin
 		
 		
 		
-		-----------Äù½ºÆ®ÆíÁö2------------
+		-----------í€˜ìŠ¤íŠ¸í¸ì§€2------------
 		when letter begin
 			send_letter(locale.spider_dungeon_3floor_boss.title_5)
 
@@ -102,8 +102,8 @@ quest spider_dungeon_3floor_boss begin
 		
 	end
 	
-	state step3 begin --Å¹º»À» ¶¹À¸´Ï °æºñ¿¡°Ô µ¹¾Æ°£´Ù.
-		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --Å×½ºÆ®¿ë
+	state step3 begin --íƒë³¸ì„ ë–´ìœ¼ë‹ˆ ê²½ë¹„ì—ê²Œ ëŒì•„ê°„ë‹¤.
+		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --í…ŒìŠ¤íŠ¸ìš©
 			set_state(start)
 			say(locale.spider_dungeon_3floor_boss.say_2)
 		end
@@ -115,7 +115,7 @@ quest spider_dungeon_3floor_boss begin
 		when letter begin
 			send_letter(locale.spider_dungeon_3floor_boss.title_7)
 
-			--°æºñ´ëÀåÀ» °¡¸®Å²´Ù.
+			--ê²½ë¹„ëŒ€ì¥ì„ ê°€ë¦¬í‚¨ë‹¤.
 			local v = find_npc_by_vnum(20355)
 			if 0 != v then
 				target.vid("__TARGET__", v, mob_name(20355))
@@ -128,7 +128,7 @@ quest spider_dungeon_3floor_boss begin
 			say("")
 		end
 		
-		--À»µÎÁö¸¦ ¼±ÅÃÇÏ¸é ÇØ´ç Äù½ºÆ®¿¡ °ü·ÃµÈ ´ëÈ­¸¦ ³ª´­ ¼ö ÀÖ´Ù.
+		--ì„ë‘ì§€ë¥¼ ì„ íƒí•˜ë©´ í•´ë‹¹ í€˜ìŠ¤íŠ¸ì— ê´€ë ¨ëœ ëŒ€í™”ë¥¼ ë‚˜ëˆŒ ìˆ˜ ìˆë‹¤.
 		when 20355.chat.locale.spider_dungeon_3floor_boss.title_7 begin
 			say_title(mob_name(20355))
 			say(locale.spider_dungeon_3floor_boss.say_7_1)
@@ -137,8 +137,8 @@ quest spider_dungeon_3floor_boss begin
 		
 	end
 		
-	state step4 begin  --À»µÎÁö¿¡°Ô Å¹º»À» ¸Ã±âÀÚ.
-		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --Å×½ºÆ®¿ë
+	state step4 begin  --ì„ë‘ì§€ì—ê²Œ íƒë³¸ì„ ë§¡ê¸°ì.
+		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --í…ŒìŠ¤íŠ¸ìš©
 			set_state(start)
 			say(locale.spider_dungeon_3floor_boss.say_2)
 		end
@@ -147,11 +147,11 @@ quest spider_dungeon_3floor_boss begin
 			say(locale.spider_dungeon_3floor_boss.say_1)
 		end
 		
-		-----------Äù½ºÆ®ÆíÁö2------------
+		-----------í€˜ìŠ¤íŠ¸í¸ì§€2------------
 		when letter begin
 			send_letter(locale.spider_dungeon_3floor_boss.title_7)
 
-			-- À»µÎÁö¸¦ °¡¸®Å²´Ù.
+			-- ì„ë‘ì§€ë¥¼ ê°€ë¦¬í‚¨ë‹¤.
 			local v = find_npc_by_vnum(20011)
 			if 0 != v then
 				target.vid("__TARGET__", v, mob_name(20011))
@@ -180,8 +180,8 @@ quest spider_dungeon_3floor_boss begin
 		end
 	end
 	
-	state step5 begin  --°æºñÇÑÅ× ÆíÁö ¹è´Ş
-		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --Å×½ºÆ®¿ë
+	state step5 begin  --ê²½ë¹„í•œí…Œ í¸ì§€ ë°°ë‹¬
+		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --í…ŒìŠ¤íŠ¸ìš©
 			set_state(start)
 			say(locale.spider_dungeon_3floor_boss.say_2)
 		end
@@ -191,9 +191,9 @@ quest spider_dungeon_3floor_boss begin
 		end
 		
 		when letter begin
-			send_letter("À»µÎÁöÀÇ ÆíÁö¹è´Ş")
+			send_letter("ì„ë‘ì§€ì˜ í¸ì§€ë°°ë‹¬")
 
-			-- À»µÎÁö¸¦ °¡¸®Å²´Ù.
+			-- ì„ë‘ì§€ë¥¼ ê°€ë¦¬í‚¨ë‹¤.
 			local v = find_npc_by_vnum(20355)
 			if 0 != v then
 				target.vid("__TARGET__", v, mob_name(20355))
@@ -224,8 +224,8 @@ quest spider_dungeon_3floor_boss begin
 		
 	end
 	
-	state step6 begin --°æºñ´Â ³ª¸¸ ÀÏ½ÃÅ²´Ù. À»µÎÁö¿Í »óÀÇÇÏÀÚ.
-		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --Å×½ºÆ®¿ë
+	state step6 begin --ê²½ë¹„ëŠ” ë‚˜ë§Œ ì¼ì‹œí‚¨ë‹¤. ì„ë‘ì§€ì™€ ìƒì˜í•˜ì.
+		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --í…ŒìŠ¤íŠ¸ìš©
 			set_state(start)
 			say(locale.spider_dungeon_3floor_boss.say_2)
 		end
@@ -237,7 +237,7 @@ quest spider_dungeon_3floor_boss begin
 		when letter begin
 			send_letter(locale.spider_dungeon_3floor_boss.title_9)
 			
-			-- À»µÎÁö¸¦ °¡¸®Å²´Ù.
+			-- ì„ë‘ì§€ë¥¼ ê°€ë¦¬í‚¨ë‹¤.
 			local v = find_npc_by_vnum(20011)
 			if 0 != v then
 				target.vid("__TARGET__", v, mob_name(20011))
@@ -250,7 +250,7 @@ quest spider_dungeon_3floor_boss begin
 			say("")
 		end
 
-		--À»µÎÁö¸¦ ¼±ÅÃÇÏ¸é ÇØ´ç Äù½ºÆ®¿¡ °ü·ÃµÈ ´ëÈ­¸¦ ³ª´­ ¼ö ÀÖ´Ù.
+		--ì„ë‘ì§€ë¥¼ ì„ íƒí•˜ë©´ í•´ë‹¹ í€˜ìŠ¤íŠ¸ì— ê´€ë ¨ëœ ëŒ€í™”ë¥¼ ë‚˜ëˆŒ ìˆ˜ ìˆë‹¤.
 		when 20011.chat.locale.spider_dungeon_3floor_boss.title_9 begin
 			target.delete("__TARGET__")
 			say_title(mob_name(20011))
@@ -262,8 +262,8 @@ quest spider_dungeon_3floor_boss begin
 		
 	end
 	
-	state boss_ok begin  -- ¿­¼è¸¦ ¸¸µé¼ö ÀÖ°Ô µÈ ÃÖÁ¾»óÅÂ. ÀÌÁ¦ºÎÅÍ °Å¹Ì±¼ º¸½º·ë¿¡ ÀÔÀåÇÒ ¼ö ÀÖ´Ù.
-		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --Å×½ºÆ®¿ë
+	state boss_ok begin  -- ì—´ì‡ ë¥¼ ë§Œë“¤ìˆ˜ ìˆê²Œ ëœ ìµœì¢…ìƒíƒœ. ì´ì œë¶€í„° ê±°ë¯¸êµ´ ë³´ìŠ¤ë£¸ì— ì…ì¥í•  ìˆ˜ ìˆë‹¤.
+		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --í…ŒìŠ¤íŠ¸ìš©
 			set_state(start)
 			say(locale.spider_dungeon_3floor_boss.say_2)
 		end
@@ -306,8 +306,8 @@ quest spider_dungeon_3floor_boss begin
 				if party.get_leader_pid() == game.get_event_flag("spider_lair_leader_"..get_channel_id()) then
 				
 					if  starttime +  lair_enter_wait_time >= current_time  and party.get_leader_pid() == game.get_event_flag("spider_lair_leader_"..get_channel_id()) and game.get_event_flag("spider_lair_ongoing_"..get_channel_id()) == 1 then
-						say(locale.spider_dungeon_3floor_boss.say_10) -- Å×½ºÆ®¿ë
-						local warp = select("È®ÀÎ","Ãë¼Ò")
+						say(locale.spider_dungeon_3floor_boss.say_10) -- í…ŒìŠ¤íŠ¸ìš©
+						local warp = select("í™•ì¸","ì·¨ì†Œ")
 						if warp == 1 then
 							pc.setqf("firstIn",1)
 							pc.setqf("retry_limit_time", starttime + lair_time + access_limit_time )
@@ -316,7 +316,7 @@ quest spider_dungeon_3floor_boss begin
 							return
 						end
 					else
-						say(locale.spider_dungeon_3floor_boss.say_11) -- Å×½ºÆ®¿ë
+						say(locale.spider_dungeon_3floor_boss.say_11) -- í…ŒìŠ¤íŠ¸ìš©
 						return
 					end
 				else
@@ -346,7 +346,7 @@ quest spider_dungeon_3floor_boss begin
 						
 						mob.spawn(2094,369,551,0,0)
 						
-						--°ª ¼³Á¤.
+						--ê°’ ì„¤ì •.
 						game.set_event_flag("spider_lair_ongoing_"..get_channel_id()		,			1)
 						game.set_event_flag("spider_lair_start_time_"..get_channel_id()	, get_global_time())
 						game.set_event_flag("spider_lair_end_time_"..get_channel_id()		, get_global_time() + lair_time)
@@ -366,7 +366,7 @@ quest spider_dungeon_3floor_boss begin
 					say(locale.spider_dungeon_3floor_boss.say_18)
 					return
 				end
-			else --¸®´õ ¾Æ´Ï´Ù.
+			else --ë¦¬ë” ì•„ë‹ˆë‹¤.
 				say(locale.spider_dungeon_3floor_boss.say_19)
 				return
 			end
@@ -377,7 +377,7 @@ quest spider_dungeon_3floor_boss begin
 	end
 
 	state inLair begin
-		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --Å×½ºÆ®¿ë
+		when 20011.chat.locale.spider_dungeon_3floor_boss.title_2 with is_test_server() begin   --í…ŒìŠ¤íŠ¸ìš©
 			set_state(start)
 			say(locale.spider_dungeon_3floor_boss.say_2)
 		end
@@ -405,14 +405,14 @@ quest spider_dungeon_3floor_boss begin
 		end
 
 		
-		when 2092.kill begin --´ë¿Õ°Å¹Ì Á×ÀÓ
+		when 2092.kill begin --ëŒ€ì™•ê±°ë¯¸ ì£½ì„
 			server_timer("spider_dead_timer", king_kill_wait_time)
 			game.set_event_flag("spider_dead"..get_channel_id(), 1)
 			notice_in_map(locale.spider_dungeon_3floor_boss.say_20)
 		end
 		
 		
-		when 2095.kill begin --°Å¹Ì¾Ë Á×ÀÓ
+		when 2095.kill begin --ê±°ë¯¸ì•Œ ì£½ì„
 			local kingVid = game.get_event_flag("king_vid")
 			local remain_egg = game.get_event_flag("remain_egg"..get_channel_id())
 			
@@ -421,17 +421,17 @@ quest spider_dungeon_3floor_boss begin
 				game.set_event_flag("remain_egg"..get_channel_id(), remain_egg)
 			end
 			
-			--°Å¹ÌÀÇ °ø°İ·Â º¸Á¤
+			--ê±°ë¯¸ì˜ ê³µê²©ë ¥ ë³´ì •
 			 npc.set_vid_attack_mul(kingVid, 10/(remain_egg + 1))
 			 
-			 --°Å¹Ì°¡ ¹Ş´Â ÇÇÇØ·® º¸Á¤
+			 --ê±°ë¯¸ê°€ ë°›ëŠ” í”¼í•´ëŸ‰ ë³´ì •
 			 npc.set_vid_damage_mul(kingVid, 10/(remain_egg + 1))
 		end
 		
 		
-		--  2012.4.5 ÀÌ»óÇö ¸®Á¨À§Ä¡ ¼öÁ¤
+		--  2012.4.5 ì´ìƒí˜„ ë¦¬ì  ìœ„ì¹˜ ìˆ˜ì •
 		when 30327.use with pc.getx() >= 827 and pc.get_map_index() == 217 and pc.getx() <= 937 and pc.gety() >= 6127 and  pc.gety() <= 6257 begin
-			--say("¸Ê¹øÈ£ : "..pc.get_map_index())
+			--say("ë§µë²ˆí˜¸ : "..pc.get_map_index())
 			pc.remove_item(30327, 1)
 			i = mob.spawn(2095,400,566,0,0)
 			mob.spawn(2095,400,594,0,0)

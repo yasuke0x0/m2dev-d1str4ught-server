@@ -1,9 +1,9 @@
 define acient_rubbing 31001
 define acient_doc 31002
 ----------------------------------
---	¸ŞÀÎÄù½ºÆ® LV60
---  ÀÇ¿ÜÀÇ ´Ü¼­ : À»µÎÁö¿Í Èæ¾Ï±¹
---  2011.11.24 ±è¿ë¿í
+--	ë©”ì¸í€˜ìŠ¤íŠ¸ LV60
+--  ì˜ì™¸ì˜ ë‹¨ì„œ : ì„ë‘ì§€ì™€ í‘ì•”êµ­
+--  2011.11.24 ê¹€ìš©ìš±
 ----------------------------------
 quest main_quest_lv60 begin
 	state start begin
@@ -21,17 +21,17 @@ quest main_quest_lv60 begin
 	end
 
 	state quest1_begin begin
-		when letter begin    --Äù½ºÆ®ÆíÁö1
+		when letter begin    --í€˜ìŠ¤íŠ¸í¸ì§€1
 			send_letter(gameforge.main_quest_lv60._10_sendLetter)
 			
-			-- À»µÎÁö¸¦ °¡¸®Å²´Ù.
+			-- ì„ë‘ì§€ë¥¼ ê°€ë¦¬í‚¨ë‹¤.
 			local vid_20011 = find_npc_by_vnum(20011)
 			if 0 != vid_20011 then
 				target.vid("__TARGET__", vid_20011, mob_name(20011))
 			end
 		end
 
-		when button or info begin  -- Äù½ºÆ®ÆíÁö1 ³»¿ë
+		when button or info begin  -- í€˜ìŠ¤íŠ¸í¸ì§€1 ë‚´ìš©
 			say_title(gameforge.main_quest_lv60._10_sendLetter)
 			
 			----"12345678901234567890123456789012345678901234567890"|
@@ -62,11 +62,11 @@ quest main_quest_lv60 begin
 	end
 
 	state quest2_begin begin
-		-----------Äù½ºÆ®ÆíÁö2------------
+		-----------í€˜ìŠ¤íŠ¸í¸ì§€2------------
 		when letter begin
 			send_letter(gameforge.main_quest_lv60._60_sendLetter)
 
-			-- À»µÎÁö¸¦ °¡¸®Å²´Ù.
+			-- ì„ë‘ì§€ë¥¼ ê°€ë¦¬í‚¨ë‹¤.
 			local v = find_npc_by_vnum(20011)
 			if 0 != v then
 				target.vid("__TARGET__", v, mob_name(20011))
@@ -105,12 +105,12 @@ quest main_quest_lv60 begin
 		end
 	end
 	
-	state quest2_ongoing begin --À»µÎÁö¿Í ´ëÈ­ÇÏ°í Å¹º»À» ¹Ş¾Æ¿À¶ó´Â ¹Ì¼ÇÀ» ¹Ş¾Ò´Ù.
-		-----------Äù½ºÆ®ÆíÁö2------------
+	state quest2_ongoing begin --ì„ë‘ì§€ì™€ ëŒ€í™”í•˜ê³  íƒë³¸ì„ ë°›ì•„ì˜¤ë¼ëŠ” ë¯¸ì…˜ì„ ë°›ì•˜ë‹¤.
+		-----------í€˜ìŠ¤íŠ¸í¸ì§€2------------
 		when letter begin
 			send_letter(gameforge.main_quest_lv60._60_sendLetter)
 
-			-- Èæ¾Ï±¹ÀÇ °í´ë ºñ¼®À» °¡¸®Å²´Ù. (Áö±İÀº ¸¶À» npc¸¦ °¡¸®Å²´Ù.)
+			-- í‘ì•”êµ­ì˜ ê³ ëŒ€ ë¹„ì„ì„ ê°€ë¦¬í‚¨ë‹¤. (ì§€ê¸ˆì€ ë§ˆì„ npcë¥¼ ê°€ë¦¬í‚¨ë‹¤.)
 			local v = find_npc_by_vnum(20371)
 			if 0 != v then
 				target.vid("__TARGET__", v, mob_name(20371))
@@ -123,14 +123,14 @@ quest main_quest_lv60 begin
 			say("")
 		end
 		
-		--À»µÎÁö¸¦ ¼±ÅÃÇÏ¸é ÇØ´ç Äù½ºÆ®¿¡ °ü·ÃµÈ ´ëÈ­¸¦ ³ª´­ ¼ö ÀÖ´Ù.
+		--ì„ë‘ì§€ë¥¼ ì„ íƒí•˜ë©´ í•´ë‹¹ í€˜ìŠ¤íŠ¸ì— ê´€ë ¨ëœ ëŒ€í™”ë¥¼ ë‚˜ëˆŒ ìˆ˜ ìˆë‹¤.
 		when 20011.gameforge.main_quest_lv60._60_sendLetter begin
 			say_title(mob_name(20011))
 			say(gameforge.main_quest_lv60._130_say)
 			say("")
 		end
 		
-		--Èæ¾Ï±¹ÀÇ °í´ë ºñ¼®À» ´©¸£¸é. 
+		--í‘ì•”êµ­ì˜ ê³ ëŒ€ ë¹„ì„ì„ ëˆ„ë¥´ë©´. 
 		when 20371.click begin
 			target.delete("__TARGET__")
 			say_reward(gameforge.main_quest_lv60._140_sayReward)
@@ -141,13 +141,13 @@ quest main_quest_lv60 begin
 		end
 	end
 		
-	--°í´ë ºñ¼®ÀÇ Å¹º»À» ¾ò¾ú´Ù.
+	--ê³ ëŒ€ ë¹„ì„ì˜ íƒë³¸ì„ ì–»ì—ˆë‹¤.
 	state quest2_end begin
-		-----------Äù½ºÆ®ÆíÁö2------------
+		-----------í€˜ìŠ¤íŠ¸í¸ì§€2------------
 		when letter begin
 			send_letter(gameforge.main_quest_lv60._60_sendLetter)
 
-			-- À»µÎÁö¸¦ °¡¸®Å²´Ù.
+			-- ì„ë‘ì§€ë¥¼ ê°€ë¦¬í‚¨ë‹¤.
 			local v = find_npc_by_vnum(20011)
 			if 0 != v then
 				target.vid("__TARGET__", v, mob_name(20011))
@@ -187,14 +187,14 @@ quest main_quest_lv60 begin
 			say_reward(string.format(gameforge.main_quest_lv60._210_sayReward, item_name(50725).." ".."10"..locale.count_postfix))
 			say("")
 			
-			-- º¸»ó Áö±Ş -- 
-			-- ÀÌ°÷¿¡ º¸»ó Áö±ŞÀ» ±¸ÇöÇÑ´Ù.
+			-- ë³´ìƒ ì§€ê¸‰ -- 
+			-- ì´ê³³ì— ë³´ìƒ ì§€ê¸‰ì„ êµ¬í˜„í•œë‹¤.
 			pc.give_exp2(980000)
 			pc.change_money(175000)
 			
-			pc.give_item2(71001, 10) -- ÁÖ¾È¼ú¼­
-			pc.give_item2(50721, 10) -- º¹¼ş¾Æ²É
-			pc.give_item2(50725, 10) -- ¼®Ã¢Æ÷
+			pc.give_item2(71001, 10) -- ì£¼ì•ˆìˆ ì„œ
+			pc.give_item2(50721, 10) -- ë³µìˆ­ì•„ê½ƒ
+			pc.give_item2(50725, 10) -- ì„ì°½í¬
 			
 			
 			
@@ -204,11 +204,11 @@ quest main_quest_lv60 begin
 	end
 	
 	state quest3_begin begin
-		-------Äù½ºÆ®ÆíÁö3---------
+		-------í€˜ìŠ¤íŠ¸í¸ì§€3---------
 		when letter begin
 			send_letter(gameforge.main_quest_lv60._220_sendLetter)
 
-			-- À»µÎÁö¸¦ °¡¸®Å²´Ù.
+			-- ì„ë‘ì§€ë¥¼ ê°€ë¦¬í‚¨ë‹¤.
 			local v = find_npc_by_vnum(20011)
 			if 0 != v then
 				target.vid("__TARGET__", v, mob_name(20011))
@@ -233,11 +233,11 @@ quest main_quest_lv60 begin
 	end
 	
 	state quest3_ongoing1 begin
-		-------Äù½ºÆ®ÆíÁö3---------
+		-------í€˜ìŠ¤íŠ¸í¸ì§€3---------
 		when letter begin
 			send_letter(gameforge.main_quest_lv60._220_sendLetter)
 
-			-- ÈæÀû±Í¸ñÀÇ À§Ä¡¸¦ Ç¥½ÃÇÑ´Ù.--
+			-- í‘ì ê·€ëª©ì˜ ìœ„ì¹˜ë¥¼ í‘œì‹œí•œë‹¤.--
 			--------------------------------
 			--------------------------------
 		end
@@ -248,33 +248,33 @@ quest main_quest_lv60 begin
 			say("")
 		end
 
-		--À»µÎÁö¸¦ ¼±ÅÃÇÏ¸é ÇØ´ç Äù½ºÆ®¿¡ °ü·ÃµÈ ´ëÈ­¸¦ ³ª´­ ¼ö ÀÖ´Ù.
+		--ì„ë‘ì§€ë¥¼ ì„ íƒí•˜ë©´ í•´ë‹¹ í€˜ìŠ¤íŠ¸ì— ê´€ë ¨ëœ ëŒ€í™”ë¥¼ ë‚˜ëˆŒ ìˆ˜ ìˆë‹¤.
 		when 20011.chat.gameforge.main_quest_lv60._220_sendLetter begin
 			say_title(mob_name(20011))
 			say(gameforge.main_quest_lv60._260_say)
 			say("")
 		end
 		
-		--ÈæÀû±Í¸ñÀ» Àâ¾ÒÀ»¶§ 1000ºĞÀÇ 1 È®·ü·Î Äù½ºÆ® Á¶°ÇÀ» ¸¸Á·½ÃÄÑ ÁØ´Ù.
+		--í‘ì ê·€ëª©ì„ ì¡ì•˜ì„ë•Œ 1000ë¶„ì˜ 1 í™•ë¥ ë¡œ í€˜ìŠ¤íŠ¸ ì¡°ê±´ì„ ë§Œì¡±ì‹œì¼œ ì¤€ë‹¤.
 		when 2305.kill begin
 			if	number (1,100) == 1 then	
 				pc.give_item2 (acient_doc, 1 )	
 				say_reward(gameforge.main_quest_lv60._270_sayReward)
 				say("")
 				
-				--3.ÁøÇà
+				--3.ì§„í–‰
 				set_state (quest3_end1)
 			end
 		end
 	end
 	
-	-- °í´ë¹®¼­¸¦ ÇÏ³ª ¾ò¾ú´Ù. À»µÎÁö¿¡°Ô °¡Á®´ÙÁà¾ßÇÑ´Ù.
+	-- ê³ ëŒ€ë¬¸ì„œë¥¼ í•˜ë‚˜ ì–»ì—ˆë‹¤. ì„ë‘ì§€ì—ê²Œ ê°€ì ¸ë‹¤ì¤˜ì•¼í•œë‹¤.
 	state quest3_end1 begin
-		-------Äù½ºÆ®ÆíÁö3---------
+		-------í€˜ìŠ¤íŠ¸í¸ì§€3---------
 		when letter begin
 			send_letter(gameforge.main_quest_lv60._220_sendLetter)
 
-			-- À»µÎÁö¸¦ °¡¸®Å²´Ù.
+			-- ì„ë‘ì§€ë¥¼ ê°€ë¦¬í‚¨ë‹¤.
 			local v = find_npc_by_vnum(20011)
 			if 0 != v then
 				target.vid("__TARGET__", v, mob_name(20011))
@@ -295,8 +295,8 @@ quest main_quest_lv60 begin
 			say("")
 			wait()
 			
-			--@@@@@@@@@¹ö±×@@@@@@@@@@--
-			--1. ´ÙÀ½ÀÇ ³»¿ëÀÌ ¶ßÁö ¾Ê´Â´Ù.
+			--@@@@@@@@@ë²„ê·¸@@@@@@@@@@--
+			--1. ë‹¤ìŒì˜ ë‚´ìš©ì´ ëœ¨ì§€ ì•ŠëŠ”ë‹¤.
 			say_title(mob_name(20011))
 			----"12345678901234567890123456789012345678901234567890"|
 			pc.remove_item (acient_doc, 1 )	
@@ -309,19 +309,19 @@ quest main_quest_lv60 begin
 	end
 	
 	state quest3_ongoing2 begin
-		--ÀÌ »óÅÂ¿¡ Ã³À½ µé¾î¿À°Ô µÇ¸é '³²Àº °í´ëÀÇ ¹®¼­' Äù½ºÆ® ÇÃ·¡±×¸¦ »ı¼ºÇÑ´Ù.
-		-- ÃÊ±â°ªÀº 9·Î ½ÃÀÛÇØ¼­ ¸ó½ºÅÍ¸¦ ÀâÀ»¶§¸¶´Ù 1¾¿ ÁÙ¿© 0±îÁö °£´Ù.
-		-- 0ÀÌ µÇ¸é Äù½ºÆ® ½ºÅ×ÀÌÆ®¸¦ º¯È­½ÃÅ²´Ù.
+		--ì´ ìƒíƒœì— ì²˜ìŒ ë“¤ì–´ì˜¤ê²Œ ë˜ë©´ 'ë‚¨ì€ ê³ ëŒ€ì˜ ë¬¸ì„œ' í€˜ìŠ¤íŠ¸ í”Œë˜ê·¸ë¥¼ ìƒì„±í•œë‹¤.
+		-- ì´ˆê¸°ê°’ì€ 9ë¡œ ì‹œì‘í•´ì„œ ëª¬ìŠ¤í„°ë¥¼ ì¡ì„ë•Œë§ˆë‹¤ 1ì”© ì¤„ì—¬ 0ê¹Œì§€ ê°„ë‹¤.
+		-- 0ì´ ë˜ë©´ í€˜ìŠ¤íŠ¸ ìŠ¤í…Œì´íŠ¸ë¥¼ ë³€í™”ì‹œí‚¨ë‹¤.
 		when enter begin
 			pc.setqf("remain_item",9)
 		end
 		
 		--*************************--
-		-------Äù½ºÆ®ÆíÁö3_1---------
+		-------í€˜ìŠ¤íŠ¸í¸ì§€3_1---------
 		when letter begin
 			send_letter(gameforge.main_quest_lv60._220_sendLetter)
 
-			-- ÈæÀû±Í¸ñÀÇ À§Ä¡¸¦ Ç¥½ÃÇÑ´Ù.--
+			-- í‘ì ê·€ëª©ì˜ ìœ„ì¹˜ë¥¼ í‘œì‹œí•œë‹¤.--
 			--------------------------------
 			--------------------------------
 		end
@@ -336,7 +336,7 @@ quest main_quest_lv60 begin
 		
 
 		
-		--ÈæÀû±Í¸ñÀ» Àâ¾ÒÀ»¶§ 1000ºĞÀÇ 1 È®·ü·Î ³²Àº °í´ë ¹®¼­ ¼ö¸¦ ÁÙ¿©ÁØ´Ù.
+		--í‘ì ê·€ëª©ì„ ì¡ì•˜ì„ë•Œ 1000ë¶„ì˜ 1 í™•ë¥ ë¡œ ë‚¨ì€ ê³ ëŒ€ ë¬¸ì„œ ìˆ˜ë¥¼ ì¤„ì—¬ì¤€ë‹¤.
 		when 2305.kill begin
 			if	number (1,100) == 1 then
 				local remain_item_prev =  pc.getqf("remain_item")
@@ -345,9 +345,9 @@ quest main_quest_lv60 begin
 				pc.give_item2 (acient_doc, 1 )	
 				notice(string.format(gameforge.main_quest_lv60._300_say,pc.getqf("remain_item")))
 				
-				-- ¸ğµç ¹®¼­¸¦ ´Ù ¾ò¾úÀ¸¸é ´ÙÀ½ Äù½ºÆ®·Î ³Ñ¾î°£´Ù.
+				-- ëª¨ë“  ë¬¸ì„œë¥¼ ë‹¤ ì–»ì—ˆìœ¼ë©´ ë‹¤ìŒ í€˜ìŠ¤íŠ¸ë¡œ ë„˜ì–´ê°„ë‹¤.
 				if pc.getqf("remain_item")==0 then
-					-- ÈæÀû±Í¸ñÀÇ À§Ä¡ Ç¥½Ã¸¦ ¾ø¾ÖÁØ´Ù --
+					-- í‘ì ê·€ëª©ì˜ ìœ„ì¹˜ í‘œì‹œë¥¼ ì—†ì• ì¤€ë‹¤ --
 					-------------------------------------
 					-------------------------------------
 					set_state (quest3_end2)
@@ -358,11 +358,11 @@ quest main_quest_lv60 begin
 	
 	state quest3_end2 begin
 		--*************************--
-		-------Äù½ºÆ®ÆíÁö3_1---------
+		-------í€˜ìŠ¤íŠ¸í¸ì§€3_1---------
 		when letter begin
 			send_letter(gameforge.main_quest_lv60._220_sendLetter)
 
-			-- À»µÎÁö¸¦ °¡¸®Å²´Ù.
+			-- ì„ë‘ì§€ë¥¼ ê°€ë¦¬í‚¨ë‹¤.
 			local v = find_npc_by_vnum(20011)
 			if 0 != v then
 				target.vid("__TARGET__", v, mob_name(20011))
@@ -407,12 +407,12 @@ quest main_quest_lv60 begin
 			say("")
 			
 			
-			-- º¸»ó Áö±Ş -- 
+			-- ë³´ìƒ ì§€ê¸‰ -- 
 			pc.give_exp2(3300000)
 			
-			pc.give_item2(71094, 3) -- ¼±ÀÎÀÇ ±³ÈÆ * 3
-			pc.give_item2(30056) -- °Å¹ÌÁÙ
-			pc.give_item2(30025) -- °Å¹ÌÀÇ µ¶ÁÖ¸Ó´Ï
+			pc.give_item2(71094, 3) -- ì„ ì¸ì˜ êµí›ˆ * 3
+			pc.give_item2(30056) -- ê±°ë¯¸ì¤„
+			pc.give_item2(30025) -- ê±°ë¯¸ì˜ ë…ì£¼ë¨¸ë‹ˆ
 			
 			set_state (quest4_begin)
 		end	
@@ -420,11 +420,11 @@ quest main_quest_lv60 begin
 	
 	state quest4_begin begin
 		--*************************--
-		-------Äù½ºÆ®ÆíÁö4-----------
+		-------í€˜ìŠ¤íŠ¸í¸ì§€4-----------
 		when letter begin
 			send_letter(gameforge.main_quest_lv60._340_sendLetter)
 
-			-- À»µÎÁö¸¦ °¡¸®Å²´Ù.
+			-- ì„ë‘ì§€ë¥¼ ê°€ë¦¬í‚¨ë‹¤.
 			local v = find_npc_by_vnum(20011)
 			if 0 != v then
 				target.vid("__TARGET__", v, mob_name(20011))
@@ -475,8 +475,8 @@ quest main_quest_lv60 begin
 			say_reward(gameforge.main_quest_lv60._410_sayReward)
 			say("")
 			
-			--@@@ ¹ö±× @@@--
-			--1. Äù½ºÆ® ÆíÁö°¡ »õ·Î ³ªÅ¸³­´Ù.
+			--@@@ ë²„ê·¸ @@@--
+			--1. í€˜ìŠ¤íŠ¸ í¸ì§€ê°€ ìƒˆë¡œ ë‚˜íƒ€ë‚œë‹¤.
 			clear_letter()
 			set_quest_state ("main_quest_lv66", "state_0")
 			set_state (__COMPLETE__)

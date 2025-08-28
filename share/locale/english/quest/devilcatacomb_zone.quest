@@ -89,38 +89,38 @@ quest devilcatacomb_zone begin
 			local setting = devilcatacomb_zone.setting()
 			local idx = pc.get_map_index()
 			if idx >= (setting.map_idx * 10000) and idx < ((setting.map_idx + 1) * 10000) then
---				pc.set_warp_location(65, 5914, 992)         -----------¾Æ±Íµ¿±¼ ÁÂÇ¥·Î
+--				pc.set_warp_location(65, 5914, 992)         -----------ì•„ê·€ë™êµ´ ì¢Œí‘œë¡œ
 				local level = d.getf("level")
-				-- warp locationÀÌ 0,0 ÀÌ¸é ½Ã½ºÅÛ »óÀ¸·Î, Á¾·á ½Ã, Á¾·á À§Ä¡¸¦ ½ÃÀÛ À§Ä¡·Î ÀúÀåÇÑ´Ù.
+				-- warp locationì´ 0,0 ì´ë©´ ì‹œìŠ¤í…œ ìƒìœ¼ë¡œ, ì¢…ë£Œ ì‹œ, ì¢…ë£Œ ìœ„ì¹˜ë¥¼ ì‹œì‘ ìœ„ì¹˜ë¡œ ì €ì¥í•œë‹¤.
 				d.set_warp_location (0, 0, 0)
 					
 				if level == 2 then
 					say(gameforge.devilcatacomb_zone._10_say)
 					say(string.format(gameforge.devilcatacomb_zone._20_say, 60))
 				elseif level == pc.getqf ("level") then
---					say ("³«¿ÀµÇÁö ¾Ê±â À§ÇØ µ¿·áµé°ú ÇÕ·ùÇÏ½Ê½Ã¿À.")
+--					say ("ë‚™ì˜¤ë˜ì§€ ì•Šê¸° ìœ„í•´ ë™ë£Œë“¤ê³¼ í•©ë¥˜í•˜ì‹­ì‹œì˜¤.")
 					say(gameforge.devilcatacomb_zone._30_say)
 				else
 					say(gameforge.devilcatacomb_zone._40_say)
---					say ("´ç½ÅÀº ³«¿ÀµÇ¾ú½À´Ï´Ù. ¿ë½ÅÀÇ ÈûÀ» ºô¾î Àá½Ã µÚ µ¿±¼ ¹ÛÀ¸·Î ÀÌµ¿ÇÕ´Ï´Ù.")
+--					say ("ë‹¹ì‹ ì€ ë‚™ì˜¤ë˜ì—ˆìŠµë‹ˆë‹¤. ìš©ì‹ ì˜ í˜ì„ ë¹Œì–´ ì ì‹œ ë’¤ ë™êµ´ ë°–ìœ¼ë¡œ ì´ë™í•©ë‹ˆë‹¤.")
 					timer ("devilcatacomb_ban_timer", 5)
 				end
 			end
 			if idx == setting.map_idx then
 				pc.setf("devilcatacomb_zone","last_exit_time", get_global_time())
-				-- 2ÃşÀÌ»óÀÌ¸é, ÂÑ°Ü³ª
+				-- 2ì¸µì´ìƒì´ë©´, ì«“ê²¨ë‚˜
 				if pc.get_x() < setting.floor1_s.x + setting.base.x
 					or pc.get_y() < setting.floor1_s.y + setting.base.y
 					or pc.get_x() > setting.floor1_e.x + setting.base.x
 					or pc.get_y() > setting.floor1_e.y + setting.base.y
 				then
-					-- ¾Æ±Íµ¿±¼ ÀÔ±¸·Î
+					-- ì•„ê·€ë™êµ´ ì…êµ¬ë¡œ
 --					if not is_test_server() then
 						say(gameforge.devilcatacomb_zone._40_say)
 						timer ("devilcatacomb_ban_timer", 5)
 --					end
 				else 
-					-- ¾Æ±Íµ¿±¼ ÀÔ±¸·Î
+					-- ì•„ê·€ë™êµ´ ì…êµ¬ë¡œ
 --					pc.set_warp_location(65, 5914, 992)
 					say(gameforge.devilcatacomb_zone._50_say)
 				end
@@ -172,10 +172,10 @@ quest devilcatacomb_zone begin
 			end
 		end
 	
-		-- ¸ó½ºÅÍ°¡ Á×À¸¸é ¹ß»ıÇÏ´Â ÀÌº¥Æ®.
+		-- ëª¬ìŠ¤í„°ê°€ ì£½ìœ¼ë©´ ë°œìƒí•˜ëŠ” ì´ë²¤íŠ¸.
 		when kill begin
 			local setting = devilcatacomb_zone.setting()
-			-- ¾Æ±Íµ¿±¼ 1ÃşÀÌ¸é 1% È®·ü·Î ±İ½Ã°ÇÀ» µå¶øÇÑ´Ù.
+			-- ì•„ê·€ë™êµ´ 1ì¸µì´ë©´ 1% í™•ë¥ ë¡œ ê¸ˆì‹œê±´ì„ ë“œëí•œë‹¤.
 			if pc.get_x() > setting.floor1_s.x + setting.base.x
 					and pc.get_y() > setting.floor1_s.y + setting.base.y
 					and pc.get_x() < setting.floor1_e.x + setting.base.x
@@ -201,7 +201,7 @@ quest devilcatacomb_zone begin
 			end
 		end
 	end
-		-- ±İ½Ã°ÇÀ» ³ªÂûÀÎÁõ¼®¿¡ µå·¡±×ÇÏ¸é 2ÃşÀ¸·Î º¸³½´Ù. 2ÃşºÎÅÍ´Â ´øÀüÀÌ´Ù.
+		-- ê¸ˆì‹œê±´ì„ ë‚˜ì°°ì¸ì¦ì„ì— ë“œë˜ê·¸í•˜ë©´ 2ì¸µìœ¼ë¡œ ë³´ë‚¸ë‹¤. 2ì¸µë¶€í„°ëŠ” ë˜ì „ì´ë‹¤.
 		when devilcatacomb_credit_stone. take  begin
 			local setting = devilcatacomb_zone.setting()
 		
@@ -299,9 +299,9 @@ quest devilcatacomb_zone begin
 		return clear
 	end
 	
-		-- ÇöÈ²¼®À» Å¬¸¯ÇÏ¸é 3Ãş ÁøÀÔ ¿©ºÎ¸¦ ¼±ÅÃÇÒ ¼ö ÀÖ°í
-		-- ÁøÀÔ½Ã »ç½ÅÀÇÁõÇ¥¸¦ °Ë»çÇÑ´Ù.
-		-- »ç½ÅÀÇ ÁõÇ¥°¡ ¾ø´Ù¸é ¹ÛÀ¸·Î ¿öÇÁµÈ´Ù.
+		-- í˜„í™©ì„ì„ í´ë¦­í•˜ë©´ 3ì¸µ ì§„ì… ì—¬ë¶€ë¥¼ ì„ íƒí•  ìˆ˜ ìˆê³ 
+		-- ì§„ì…ì‹œ ì‚¬ì‹ ì˜ì¦í‘œë¥¼ ê²€ì‚¬í•œë‹¤.
+		-- ì‚¬ì‹ ì˜ ì¦í‘œê°€ ì—†ë‹¤ë©´ ë°–ìœ¼ë¡œ ì›Œí”„ëœë‹¤.
 		when devilcatacomb_floor2_stone.click begin
 			local setting = devilcatacomb_zone.setting()
 			
@@ -363,8 +363,8 @@ quest devilcatacomb_zone begin
 
 		when devilcatacomb3_stone.kill begin
 			local setting = devilcatacomb_zone.setting()
-			-- µ¹ÀÌ ÆÄ±«µÇ¸é ÁøÂ¥°¡ Á×¾ú´ÂÁö È®ÀÎÇØº»´Ù.
-			-- ÁøÂ¥°¡ Á×¾úÀ¸¸é 4ÃşÀ¸·Î ÀÌµ¿ÇÑ´Ù.
+			-- ëŒì´ íŒŒê´´ë˜ë©´ ì§„ì§œê°€ ì£½ì—ˆëŠ”ì§€ í™•ì¸í•´ë³¸ë‹¤.
+			-- ì§„ì§œê°€ ì£½ì—ˆìœ¼ë©´ 4ì¸µìœ¼ë¡œ ì´ë™í•œë‹¤.
 			if d.is_unique_dead("real") then
 				d.notice(gameforge.devilcatacomb_zone._280_dNotice)
 				
@@ -390,7 +390,7 @@ quest devilcatacomb_zone begin
 			d.spawn_mob (setting.floor4_npc, setting.floor4_npc_pos[1], setting.floor4_npc_pos[2])
 		end
 
-		-- devilcatacomb_floor4_stone´Â Å¬¸¯ ½Ã 4Ãş¿¡¼­ 5ÃşÀ¸·Î ÀÌµ¿½ÃÅ°´Â npcÀÌ´Ù.
+		-- devilcatacomb_floor4_stoneëŠ” í´ë¦­ ì‹œ 4ì¸µì—ì„œ 5ì¸µìœ¼ë¡œ ì´ë™ì‹œí‚¤ëŠ” npcì´ë‹¤.
 		when devilcatacomb_floor4_stone.click begin
 			local setting = devilcatacomb_zone.setting()
 			local n = number (1,5)
@@ -410,20 +410,20 @@ quest devilcatacomb_zone begin
 			d.spawn_mob (setting.floor5_stone, setting.floor5_stone_pos[1], setting.floor5_stone_pos[2])
 		end
 		
-		-- ¾Æ±Í¿Õ(2591)ÀÌ Á×À¸¸é ºÀÀÎÇØÃ¼¼® µå¶ø
+		-- ì•„ê·€ì™•(2591)ì´ ì£½ìœ¼ë©´ ë´‰ì¸í•´ì²´ì„ ë“œë
 		when devilcatacomb_devil_king.kill begin
 			local setting = devilcatacomb_zone.setting()
 			game.drop_item (setting.unlock_stone, 1)
 		end
 
-		-- »ç½Å±İÁ¦ºñ(30102)¿¡ ±İÁ¦ÇØÃ¼¼®ºÀÀ» µå·¡±×ÇÏ¸é ¸ğµç ¸ó½ºÅÍ¸¦ Á×ÀÌ°í
-		-- 6ÃşÀ¸·Î ÀÌµ¿ÇÏ´Â Å¸ÀÌ¸Ó¸¦ µ¿ÀÛ½ÃÅ²´Ù.
+		-- ì‚¬ì‹ ê¸ˆì œë¹„(30102)ì— ê¸ˆì œí•´ì²´ì„ë´‰ì„ ë“œë˜ê·¸í•˜ë©´ ëª¨ë“  ëª¬ìŠ¤í„°ë¥¼ ì£½ì´ê³ 
+		-- 6ì¸µìœ¼ë¡œ ì´ë™í•˜ëŠ” íƒ€ì´ë¨¸ë¥¼ ë™ì‘ì‹œí‚¨ë‹¤.
 		when devilcatacomb_floor5_stone.take begin
 			local setting = devilcatacomb_zone.setting()
 			if item.vnum == setting.unlock_stone then
 				item.remove ()
 				d.notice(gameforge.devilcatacomb_zone._310_dNotice)
-				-- 6ÃşÀ¸·Î ÀÌµ¿
+				-- 6ì¸µìœ¼ë¡œ ì´ë™
 				d.clear_regen()
 				d.purge()
 				timer("devilcatacomb_floor6_timer",2)
@@ -440,17 +440,17 @@ quest devilcatacomb_zone begin
 			timer("warp_timer",3)
 		end
 		
-		-- ¾Æ°É(2597)ÀÌ Á×À¸¸é, 6ÃşÀÇ Å¸ÀÌ¸Ó1ÀÌ µ¿ÀÛÇÑ´Ù.
+		-- ì•„ê±¸(2597)ì´ ì£½ìœ¼ë©´, 6ì¸µì˜ íƒ€ì´ë¨¸1ì´ ë™ì‘í•œë‹¤.
 		when devilcatacomb_devil_great_king.kill begin
 			server_timer ("floor6_eli_check_timer_1", 5,d.get_map_index())
 		end
 
-		-- 6ÃşÀÇ Å¸ÀÌ¸Ó1Àº ´øÀüÀÇ ¸ğµç ¸ó½ºÅÍ ¼ıÀÚ¸¦ º¸°í,
-		-- 0ÀÌ¸é 7ÃşÀ¸·Î ¿öÇÁÇÏ´Â Å¸ÀÌ¸Ó¸¦ µ¿ÀÛÇÑ´Ù.
-		-- ¹Ù·Î 7ÃşÀ¸·Î °¡Áö ¾Ê´Â ÀÌÀ¯´Â, À¯Àú¿¡°Ô ÁØºñÇÒ ½Ã°£À» ÁÖ±â À§ÇØ¼­ÀÌ´Ù.
-		-- 1ÀÌ¸é Å¸ÀÌ¸Ó2¸¦ µ¿ÀÛ½ÃÅ²´Ù.
-		-- Å¸ÀÌ¸Ó1À» recursiveÇÏ°Ô µ¿ÀÛ½ÃÅ°Áö ¾ÊÀº °ÍÀº,
-		-- ±×·² °æ¿ì resetÇÑ Å¸ÀÌ¸Ó1ÀÌ µ¿ÀÛÇÏÁö ¾Ê¾Ò±â ¶§¹®ÀÌ´Ù.
+		-- 6ì¸µì˜ íƒ€ì´ë¨¸1ì€ ë˜ì „ì˜ ëª¨ë“  ëª¬ìŠ¤í„° ìˆ«ìë¥¼ ë³´ê³ ,
+		-- 0ì´ë©´ 7ì¸µìœ¼ë¡œ ì›Œí”„í•˜ëŠ” íƒ€ì´ë¨¸ë¥¼ ë™ì‘í•œë‹¤.
+		-- ë°”ë¡œ 7ì¸µìœ¼ë¡œ ê°€ì§€ ì•ŠëŠ” ì´ìœ ëŠ”, ìœ ì €ì—ê²Œ ì¤€ë¹„í•  ì‹œê°„ì„ ì£¼ê¸° ìœ„í•´ì„œì´ë‹¤.
+		-- 1ì´ë©´ íƒ€ì´ë¨¸2ë¥¼ ë™ì‘ì‹œí‚¨ë‹¤.
+		-- íƒ€ì´ë¨¸1ì„ recursiveí•˜ê²Œ ë™ì‘ì‹œí‚¤ì§€ ì•Šì€ ê²ƒì€,
+		-- ê·¸ëŸ´ ê²½ìš° resetí•œ íƒ€ì´ë¨¸1ì´ ë™ì‘í•˜ì§€ ì•Šì•˜ê¸° ë•Œë¬¸ì´ë‹¤.
 		when floor6_eli_check_timer_1.server_timer begin
 			if d.select(get_server_timer_arg()) then
 				if d.count_monster() == 0 then
@@ -498,15 +498,15 @@ quest devilcatacomb_zone begin
 			end
 		end
 
-		-- 6Ãş°ú ¸¶Âù°¡Áö·Î »ç¸¶ÈÖ(2598)ÀÌ Á×À¸¸é
-		-- 7ÃşÀÇ Å¸ÀÌ¸Ó°¡ ÀÛµ¿ÇÑ´Ù.
+		-- 6ì¸µê³¼ ë§ˆì°¬ê°€ì§€ë¡œ ì‚¬ë§ˆíœ˜(2598)ì´ ì£½ìœ¼ë©´
+		-- 7ì¸µì˜ íƒ€ì´ë¨¸ê°€ ì‘ë™í•œë‹¤.
 		when devilcatacomb_devil_emperor.kill begin
 			server_timer ("floor7_eli_check_timer_1", 5, d.get_map_index())
 		end
 		
-		-- 7ÃşÀÇ Å¸ÀÌ¸Ó´Â 6Ãş Å¸ÀÌ¸Ó¿Í ºñ½ÁÇÏ¸ç,
-		-- ¸ó½ºÅÍ ¼ıÀÚ°¡ 0ÀÌ¸é exit Å¸ÀÌ¸Ó¸¦ ¹ß»ı½ÃÅ²´Ù.
-		-- ¹Ù·Î exitÇÏÁö ¾Ê´Â ÀÌÀ¯´Â, À¯Àúµé¿¡°Ô ÁØºñÇÒ ½Ã°£À» ÁÖ±â À§ÇØ¼­ÀÌ´Ù.
+		-- 7ì¸µì˜ íƒ€ì´ë¨¸ëŠ” 6ì¸µ íƒ€ì´ë¨¸ì™€ ë¹„ìŠ·í•˜ë©°,
+		-- ëª¬ìŠ¤í„° ìˆ«ìê°€ 0ì´ë©´ exit íƒ€ì´ë¨¸ë¥¼ ë°œìƒì‹œí‚¨ë‹¤.
+		-- ë°”ë¡œ exití•˜ì§€ ì•ŠëŠ” ì´ìœ ëŠ”, ìœ ì €ë“¤ì—ê²Œ ì¤€ë¹„í•  ì‹œê°„ì„ ì£¼ê¸° ìœ„í•´ì„œì´ë‹¤.
 		when floor7_eli_check_timer_1.server_timer begin
 			if d.select(get_server_timer_arg()) then
 				if d.count_monster() == 0 then

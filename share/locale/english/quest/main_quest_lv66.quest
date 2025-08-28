@@ -88,17 +88,17 @@ quest main_quest_lv66 begin
 			say(gameforge.main_quest_lv66._120_say)
 			wait()
 			
-			--say_title ("º¸»ó :")
+			--say_title ("ë³´ìƒ :")
 			say_reward(string.format (gameforge.main_quest_lv60._190_sayReward, 5800000))
 			say_reward(string.format (gameforge.main_quest_lv60._210_sayReward, item_name(72301).." ".."3"..locale.count_postfix))
 			say_reward(string.format (gameforge.main_quest_lv60._210_sayReward, item_name(30046)))
 
 			pc.give_exp2(5800000)
 			
-			pc.give_item2(72301) -- Ãàº¹ÀÇ ¼­ * 3
+			pc.give_item2(72301) -- ì¶•ë³µì˜ ì„œ * 3
 			pc.give_item2(72301) 
 			pc.give_item2(72301) 
-			pc.give_item2(30046) -- Àü°¥ÀÇ ²¿¸®
+			pc.give_item2(30046) -- ì „ê°ˆì˜ ê¼¬ë¦¬
 			
 			set_state (state_4)
 		end
@@ -285,9 +285,9 @@ quest main_quest_lv66 begin
 				pc.give_exp2(2900000)
 				pc.change_money(200000)
 				
-				pc.give_item2(30033) -- ±úÁø »ç±â±×¸©
-				pc.give_item2(50727, 10) -- ¸¸º´ÃÊ 10
-				pc.give_item2(50728, 10) -- »ê»Í³ª¹« 10
+				pc.give_item2(30033) -- ê¹¨ì§„ ì‚¬ê¸°ê·¸ë¦‡
+				pc.give_item2(50727, 10) -- ë§Œë³‘ì´ˆ 10
+				pc.give_item2(50728, 10) -- ì‚°ë½•ë‚˜ë¬´ 10
 
 			else
 			
@@ -307,8 +307,8 @@ quest main_quest_lv66 begin
 				pc.give_exp2(2000000)
 				pc.change_money(100000)
 				
-				pc.give_item2(50727, 10) -- ¸¸º´ÃÊ 10
-				pc.give_item2(50728, 10) -- »ê»Í³ª¹« 10
+				pc.give_item2(50727, 10) -- ë§Œë³‘ì´ˆ 10
+				pc.give_item2(50728, 10) -- ì‚°ë½•ë‚˜ë¬´ 10
 				
 			end
 			set_state (state_10)

@@ -42,7 +42,7 @@ quest new_christmas_gift_box begin
 
 		end
 
-		-- Å©¸®½º¸¶½º ¼±¹° »óÀÚ : 71144
+		-- í¬ë¦¬ìŠ¤ë§ˆìŠ¤ ì„ ë¬¼ ìƒì : 71144
 		when 71144.use begin
 			local t = get_global_time() - item.get_socket(1)
 			local n = item.get_socket (0)

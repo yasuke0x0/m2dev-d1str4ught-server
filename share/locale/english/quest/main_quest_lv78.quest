@@ -70,9 +70,9 @@ quest main_quest_lv78 begin
 
 				pc.give_exp2(36000000)
 				
-				pc.give_item2(72725) -- ¼ö·æÀÇ Ãàº¹(´ë)
-				pc.give_item2(70024) -- Ãàº¹ÀÇ ±¸½½
-				pc.give_item2(70004) -- ±Ù¸éÇÔÀÇ ÈÆÀå
+				pc.give_item2(72725) -- ìˆ˜ë£¡ì˜ ì¶•ë³µ(ëŒ€)
+				pc.give_item2(70024) -- ì¶•ë³µì˜ êµ¬ìŠ¬
+				pc.give_item2(70004) -- ê·¼ë©´í•¨ì˜ í›ˆì¥
 				pc.remove_item (red_bead, pc.count_item (red_bead))
 				set_state (state_2)
 				return
@@ -126,9 +126,9 @@ quest main_quest_lv78 begin
 
 					pc.give_exp2(36000000)
 					
-					pc.give_item2(72725) -- ¼ö·æÀÇ Ãàº¹(´ë)
-					pc.give_item2(70024) -- Ãàº¹ÀÇ ±¸½½
-					pc.give_item2(70004) -- ±Ù¸éÇÔÀÇ ÈÆÀå
+					pc.give_item2(72725) -- ìˆ˜ë£¡ì˜ ì¶•ë³µ(ëŒ€)
+					pc.give_item2(70024) -- ì¶•ë³µì˜ êµ¬ìŠ¬
+					pc.give_item2(70004) -- ê·¼ë©´í•¨ì˜ í›ˆì¥
 					pc.remove_item (red_bead, pc.count_item (red_bead))
 					set_state (state_2)
 				end
@@ -189,9 +189,9 @@ quest main_quest_lv78 begin
 			pc.give_exp2(48000000)
 			pc.change_money(230000)
 			
-			pc.give_item2(72729) -- È­·æÀÇ Ãàº¹(´ë)
-			pc.give_item2(70035) -- ¸¸³âÇÑÃ¶
-			pc.give_item2(70003) -- À°µµ
+			pc.give_item2(72729) -- í™”ë£¡ì˜ ì¶•ë³µ(ëŒ€)
+			pc.give_item2(70035) -- ë§Œë…„í•œì² 
+			pc.give_item2(70003) -- ìœ¡ë„
 			pc.remove_item (sacred_sap, pc.count_item (sacred_sap))
 			set_state (state_3)
 		end

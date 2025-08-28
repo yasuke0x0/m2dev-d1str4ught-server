@@ -1,6 +1,6 @@
 ----------------------------------------------------
 --COLLECT QUEST_lv92
---METIN2 ¼öÁı Äù½ºÆ®  
+--METIN2 ìˆ˜ì§‘ í€˜ìŠ¤íŠ¸  
 ----------------------------------------------------
 quest collect_quest_lv92 begin
 	state start begin
@@ -54,7 +54,7 @@ quest collect_quest_lv92 begin
 			say_reward(string.format(gameforge.collect_quest_lv92._100_sayReward, pc.getqf("collect_count")))
 		end
 		
-		when 71035.use begin --ÇöÈ¤ÀÇ ¹°¾à
+		when 71035.use begin --í˜„í˜¹ì˜ ë¬¼ì•½
 			if get_time() < pc.getqf("duration") then
 				say(gameforge.collect_quest_lv92._110_say)
 				return
@@ -100,9 +100,9 @@ quest collect_quest_lv92 begin
 			pc.remove_item(30251, 1)
 
 			if is_test_server() then 
-				pc.setqf("duration", get_time()+10) -- Å×½ºÆ®¼­¹ö 10ÃÊ
+				pc.setqf("duration", get_time()+10) -- í…ŒìŠ¤íŠ¸ì„œë²„ 10ì´ˆ
 			else
-				pc.setqf("duration", get_time()+60*60*6) -- ÀÏ¹İ 6½Ã°£
+				pc.setqf("duration", get_time()+60*60*6) -- ì¼ë°˜ 6ì‹œê°„
 			end
 
 			wait()
@@ -119,8 +119,8 @@ quest collect_quest_lv92 begin
 
 			if s <= pass_percent then
 				local collect_count = pc.getqf("collect_count")
-				pc.setqf("collect_count", collect_count + 1) -- ÇÏ³ª ±¸ÇßÀ¸´Ï +1 ÇØÁØ´Ù
-				pc.setqf("drink_drug", 0) -- ¹°¾à ÃÊ±âÈ­
+				pc.setqf("collect_count", collect_count + 1) -- í•˜ë‚˜ êµ¬í–ˆìœ¼ë‹ˆ +1 í•´ì¤€ë‹¤
+				pc.setqf("drink_drug", 0) -- ë¬¼ì•½ ì´ˆê¸°í™”
 
 				if collect_count < 9 then
 					say_title(gameforge.collect_quest_lv92._050_say_title)
@@ -153,12 +153,12 @@ quest collect_quest_lv92 begin
 
 				return
 			else								
-				pc.setqf("drink_drug", 0)	 --¹°¾à ÃÊ±âÈ­
+				pc.setqf("drink_drug", 0)	 --ë¬¼ì•½ ì´ˆê¸°í™”
 				say_title(gameforge.collect_quest_lv92._050_say_title)
 				say(gameforge.collect_quest_lv92._230_say)
 				return
 			end
-	   	end -- end of when 20091.chat."È«ÃµÀÇ º¸¼®À» °¡Á®¿Â°Ç°¡? " with pc.count_item(30251) > 0 begin
+	   	end -- end of when 20091.chat."í™ì²œì˜ ë³´ì„ì„ ê°€ì ¸ì˜¨ê±´ê°€? " with pc.count_item(30251) > 0 begin
     end -- end of state 'go_to_disciple'
 	
 	state __complete begin

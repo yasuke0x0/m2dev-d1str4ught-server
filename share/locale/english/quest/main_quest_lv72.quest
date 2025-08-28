@@ -111,9 +111,9 @@ quest main_quest_lv72 begin
 
             pc.give_exp2(3100000)
             
-            pc.give_item2(70005) -- °æÇèÀÇ ¹İÁö
-            pc.give_item2(drug) -- ¾Ë¼ö ¾ø´Â ¾à (+ÀÏ ¼öµµ)
-            pc.give_item2(30039) -- Çë°ÒÁ¶°¢
+            pc.give_item2(70005) -- ê²½í—˜ì˜ ë°˜ì§€
+            pc.give_item2(drug) -- ì•Œìˆ˜ ì—†ëŠ” ì•½ (+ì¼ ìˆ˜ë„)
+            pc.give_item2(30039) -- í—ê²Šì¡°ê°
             
             set_state (state_4)
         end

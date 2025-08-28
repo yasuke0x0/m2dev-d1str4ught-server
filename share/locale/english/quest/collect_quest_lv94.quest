@@ -1,6 +1,6 @@
 ----------------------------------------------------
 --COLLECT QUEST_lv94
---METIN2 ¼öÁı Äù½ºÆ®  
+--METIN2 ìˆ˜ì§‘ í€˜ìŠ¤íŠ¸  
 ----------------------------------------------------
 quest collect_quest_lv94  begin
 	state start begin
@@ -38,9 +38,9 @@ quest collect_quest_lv94  begin
 			say(gameforge.collect_quest_lv94._070_say)
 			say("")
 			set_state(go_to_disciple)
-			pc.setqf("duration", 0)  -- ½Ãµµ ÇÒ¼ö ÀÖ´Â ½Ã°£
-			pc.setqf("collect_count", 0)--ÀÌÁ¦²¯ ¸ğÀº ¾ÆÀÌÅÛ ¼ö
-			pc.setqf("drink_drug", 0) --ÇöÈ¤ÀÇ ¹°¾àÀ» ¸ÔÀ¸¸é 1
+			pc.setqf("duration", 0)  -- ì‹œë„ í• ìˆ˜ ìˆëŠ” ì‹œê°„
+			pc.setqf("collect_count", 0)--ì´ì œê» ëª¨ì€ ì•„ì´í…œ ìˆ˜
+			pc.setqf("drink_drug", 0) --í˜„í˜¹ì˜ ë¬¼ì•½ì„ ë¨¹ìœ¼ë©´ 1
 		end
 	end
 
@@ -58,7 +58,7 @@ quest collect_quest_lv94  begin
 			say("")
 		end
 		
-		when 71035.use begin --ÇöÈ¤ÀÇ ¹°¾à
+		when 71035.use begin --í˜„í˜¹ì˜ ë¬¼ì•½
 			if get_time() < pc.getqf("duration") then
 				say(gameforge.collect_quest_lv94._110_say)
 				return
@@ -123,14 +123,14 @@ quest collect_quest_lv94  begin
 		
 			local s = number(1, 100)
 			if s <= pass_percent then
-				if pc.getqf("collect_count") < 19 then     --10°³¹Ì¸¸ 
+				if pc.getqf("collect_count") < 19 then     --10ê°œë¯¸ë§Œ 
 					local index = pc.getqf("collect_count") + 1
-					pc.setqf("collect_count", index) --ÇÏ³ª ±¸ÇßÀ¸´Ï +1 ÇØÁØ´Ù
+					pc.setqf("collect_count", index) --í•˜ë‚˜ êµ¬í–ˆìœ¼ë‹ˆ +1 í•´ì¤€ë‹¤
 					say_title(gameforge.collect_quest_lv94._050_say_title)
 					say(gameforge.collect_quest_lv94._190_say)
 					say(string.format(gameforge.collect_quest_lv94._200_say, 20-pc.getqf("collect_count")))
 					say(gameforge.collect_quest_lv94._210_say)
-					pc.setqf("drink_drug", 0)	 --¹°¾à ÃÊ±âÈ­
+					pc.setqf("drink_drug", 0)	 --ë¬¼ì•½ ì´ˆê¸°í™”
 					return
 				end
 				say_title(gameforge.collect_quest_lv94._050_say_title)
@@ -138,7 +138,7 @@ quest collect_quest_lv94  begin
 				pc.setqf("collect_count",0)
 				set_state(key_item)
 			else
-				pc.setqf("drink_drug", 0)	 --¹°¾à ÃÊ±âÈ­
+				pc.setqf("drink_drug", 0)	 --ë¬¼ì•½ ì´ˆê¸°í™”
 				say_title(gameforge.collect_quest_lv94._050_say_title)
 				say(gameforge.collect_quest_lv94._240_say)
 				return

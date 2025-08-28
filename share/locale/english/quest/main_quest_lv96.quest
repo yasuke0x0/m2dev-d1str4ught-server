@@ -1,17 +1,17 @@
---2012.08 ±è¿ë¿í
---¸ŞÀÎÄù½ºÆ® ·¹º§ 96
+--2012.08 ê¹€ìš©ìš±
+--ë©”ì¸í€˜ìŠ¤íŠ¸ ë ˆë²¨ 96
 
---Äù½ºÆ® ÁøÇà npc
-define GUARD 20378 -- °æºñ´ëÀå ¾Ç¹«¸£
-define ICHUNG 20369 -- ÀÌÃæ
-define TELEPORT 9012 -- °ø°£ÀÌµ¿¼ú»ç
-define YACKHWAN 20377 -- ¾à·ÉµµÀå ¾àÈ¯
-define SCHOLAR 20380 -- ÇĞÀÚ
-define OCKGU 20008 -- ¿Á±¸
-define ALCHEMIST 20001 -- ¿¬±İ¼ú»ç
-define UNDERLING 20379 -- ¾Ç¹«¸£ÀÇ ºÎÇÏ
+--í€˜ìŠ¤íŠ¸ ì§„í–‰ npc
+define GUARD 20378 -- ê²½ë¹„ëŒ€ì¥ ì•…ë¬´ë¥´
+define ICHUNG 20369 -- ì´ì¶©
+define TELEPORT 9012 -- ê³µê°„ì´ë™ìˆ ì‚¬
+define YACKHWAN 20377 -- ì•½ë ¹ë„ì¥ ì•½í™˜
+define SCHOLAR 20380 -- í•™ì
+define OCKGU 20008 -- ì˜¥êµ¬
+define ALCHEMIST 20001 -- ì—°ê¸ˆìˆ ì‚¬
+define UNDERLING 20379 -- ì•…ë¬´ë¥´ì˜ ë¶€í•˜
 
---°­·É¼ú ÀúÁö1-1--
+--ê°•ë ¹ìˆ  ì €ì§€1-1--
 define MOB1_1 3701
 define MOB1_2 3702
 define MOB1_3 3703
@@ -19,22 +19,22 @@ define MOB1_4 3704
 define MOB1_5 3705
 define MOB1_6 3790
 define MOB1_7 3791
-define MAP_INDEX1 1 -- ¸ó½ºÅÍ°¡ ³ª¿À´Â ¸Ê ¹øÈ£
-define MAP_POS1_1_X 500 -- ¸Ê¿¡ ¹İÂ¦ÀÌµµ·Ï º¸ÀÌ´Â ÁÂÇ¥.
+define MAP_INDEX1 1 -- ëª¬ìŠ¤í„°ê°€ ë‚˜ì˜¤ëŠ” ë§µ ë²ˆí˜¸
+define MAP_POS1_1_X 500 -- ë§µì— ë°˜ì§ì´ë„ë¡ ë³´ì´ëŠ” ì¢Œí‘œ.
 define MAP_POS1_1_Y 500
 define MAP_POS1_2_X 600
 define MAP_POS1_2_Y 500
 define MAP_POS1_3_X 700
 define MAP_POS1_3_Y 300
-define ITEM1_1 31038 -- Àí¹ä ÁÖ¸Ó´Ï
-define ITEM1_1_NEEDED 100 -- ÇÊ¿ä °¹¼ö
-define ITEM1_1_PCT_GET 50 -- È¹µæ È®·ü
-define REWARD1_EXP 39032537 --  º¸»ó : °æÇèÄ¡
-define REWARD1_GOLD 346000 --  º¸»ó : °ñµå
-define REWARD1_ITEM1 30051 --  º¸»ó : ¾Ë ¼ö ¾ø´Â ºÎÀû
-define REWARD1_ITEM1_COUNT 1 --  º¸»ó °¹¼ö
+define ITEM1_1 31038 -- ì¿ë°¥ ì£¼ë¨¸ë‹ˆ
+define ITEM1_1_NEEDED 100 -- í•„ìš” ê°¯ìˆ˜
+define ITEM1_1_PCT_GET 50 -- íšë“ í™•ë¥ 
+define REWARD1_EXP 39032537 --  ë³´ìƒ : ê²½í—˜ì¹˜
+define REWARD1_GOLD 346000 --  ë³´ìƒ : ê³¨ë“œ
+define REWARD1_ITEM1 30051 --  ë³´ìƒ : ì•Œ ìˆ˜ ì—†ëŠ” ë¶€ì 
+define REWARD1_ITEM1_COUNT 1 --  ë³´ìƒ ê°¯ìˆ˜
 
---°­·É¼ú ÀúÁö1-2--
+--ê°•ë ¹ìˆ  ì €ì§€1-2--
 define MOB2_1 3801
 define MOB2_2 3802
 define MOB2_3 3803
@@ -42,24 +42,24 @@ define MOB2_4 3804
 define MOB2_5 3805
 define MOB2_6 3890
 define MOB2_7 3891
-define MAP_INDEX2 1 -- ¸ó½ºÅÍ°¡ ³ª¿À´Â ¸Ê ¹øÈ£
-define MAP_POS2_1_X 500 -- ¸Ê¿¡ ¹İÂ¦ÀÌµµ·Ï º¸ÀÌ´Â ÁÂÇ¥.
+define MAP_INDEX2 1 -- ëª¬ìŠ¤í„°ê°€ ë‚˜ì˜¤ëŠ” ë§µ ë²ˆí˜¸
+define MAP_POS2_1_X 500 -- ë§µì— ë°˜ì§ì´ë„ë¡ ë³´ì´ëŠ” ì¢Œí‘œ.
 define MAP_POS2_1_Y 500
 define MAP_POS2_2_X 600
 define MAP_POS2_2_Y 500
 define MAP_POS2_3_X 700
 define MAP_POS2_3_Y 300
-define ITEM2_1 31039 -- µ¿Àü ÁÖ¸Ó´Ï
-define ITEM2_1_NEEDED 1 -- ÇÊ¿ä °¹¼ö
-define ITEM2_2 31040 -- ³ë¶û ¸®º»
-define ITEM2_2_NEEDED 1 -- ÇÊ¿ä °¹¼ö
-define ITEM2_1_PCT_GET 100 -- È¹µæ È®·ü
-define REWARD2_EXP 40732586 -- º¸»ó : °æÇèÄ¡
-define REWARD2_GOLD 357000 -- º¸»ó : °ñµå
-define REWARD2_ITEM1 72016 -- º¸»ó : Á¦3ÀÇ ¼Õ
-define REWARD2_ITEM1_COUNT 1 -- º¸»ó °¹¼ö
+define ITEM2_1 31039 -- ë™ì „ ì£¼ë¨¸ë‹ˆ
+define ITEM2_1_NEEDED 1 -- í•„ìš” ê°¯ìˆ˜
+define ITEM2_2 31040 -- ë…¸ë‘ ë¦¬ë³¸
+define ITEM2_2_NEEDED 1 -- í•„ìš” ê°¯ìˆ˜
+define ITEM2_1_PCT_GET 100 -- íšë“ í™•ë¥ 
+define REWARD2_EXP 40732586 -- ë³´ìƒ : ê²½í—˜ì¹˜
+define REWARD2_GOLD 357000 -- ë³´ìƒ : ê³¨ë“œ
+define REWARD2_ITEM1 72016 -- ë³´ìƒ : ì œ3ì˜ ì†
+define REWARD2_ITEM1_COUNT 1 -- ë³´ìƒ ê°¯ìˆ˜
 
---°­·É¼ú ÀúÁö1-3--
+--ê°•ë ¹ìˆ  ì €ì§€1-3--
 define MOB3_1 3801
 define MOB3_2 3802
 define MOB3_3 3803
@@ -67,39 +67,39 @@ define MOB3_4 3804
 define MOB3_5 3805
 define MOB3_6 3890
 define MOB3_7 3891
-define MAP_INDEX3 1 -- ¸ó½ºÅÍ°¡ ³ª¿À´Â ¸Ê ¹øÈ£
-define MAP_POS3_1_X 500 -- ¸Ê¿¡ ¹İÂ¦ÀÌµµ·Ï º¸ÀÌ´Â ÁÂÇ¥.
+define MAP_INDEX3 1 -- ëª¬ìŠ¤í„°ê°€ ë‚˜ì˜¤ëŠ” ë§µ ë²ˆí˜¸
+define MAP_POS3_1_X 500 -- ë§µì— ë°˜ì§ì´ë„ë¡ ë³´ì´ëŠ” ì¢Œí‘œ.
 define MAP_POS3_1_Y 500
 define MAP_POS3_2_X 600
 define MAP_POS3_2_Y 500
 define MAP_POS3_3_X 700
 define MAP_POS3_3_Y 300
-define ITEM3_2  31073 -- ÁøÇà¿ë º¸»ó : ½ÅºñÀÇ È¯¾à
-define ITEM3_1 31039 -- µ¿Àü ÁÖ¸Ó´Ï
-define ITEM3_1_NEEDED 100 -- ÇÊ¿äÇÑ µ¿Àü ÁÖ¸Ó´Ï °¹¼ö
-define ITEM3_1_PCT_GET 100 -- µ¿Àü ÁÖ¸Ó´Ï È¹µæ È®·ü (1/n)
-define ITEM3_1_PCT_CHECK 70 -- °¨Á¤ ¼º°ø È®·ü (n/100)
-define REWARD3_EXP 42983593 -- º¸»ó : °æÇèÄ¡
-define REWARD3_GOLD 0 -- º¸»ó : °ñµå
-define REWARD3_ITEM1 30009 -- º¸»ó : ¾Ë ¼ö ¾ø´Â ¾à
-define REWARD3_ITEM1_COUNT 2 -- º¸»ó °¹¼ö
+define ITEM3_2  31073 -- ì§„í–‰ìš© ë³´ìƒ : ì‹ ë¹„ì˜ í™˜ì•½
+define ITEM3_1 31039 -- ë™ì „ ì£¼ë¨¸ë‹ˆ
+define ITEM3_1_NEEDED 100 -- í•„ìš”í•œ ë™ì „ ì£¼ë¨¸ë‹ˆ ê°¯ìˆ˜
+define ITEM3_1_PCT_GET 100 -- ë™ì „ ì£¼ë¨¸ë‹ˆ íšë“ í™•ë¥  (1/n)
+define ITEM3_1_PCT_CHECK 70 -- ê°ì • ì„±ê³µ í™•ë¥  (n/100)
+define REWARD3_EXP 42983593 -- ë³´ìƒ : ê²½í—˜ì¹˜
+define REWARD3_GOLD 0 -- ë³´ìƒ : ê³¨ë“œ
+define REWARD3_ITEM1 30009 -- ë³´ìƒ : ì•Œ ìˆ˜ ì—†ëŠ” ì•½
+define REWARD3_ITEM1_COUNT 2 -- ë³´ìƒ ê°¯ìˆ˜
 
---°­·É¼ú ÀúÁö1-4--
-define MOB4_1 3911 -- 00±Í¸ñ
-define MOB4_1_COUNT 1 -- Ã³Ä¡ ¼ö
-define MOB4_2 3912 -- 00±Í¸ñ
-define MOB4_2_COUNT 1 -- Ã³Ä¡ ¼ö
-define MOB4_3 3913 -- 00±Í¸ñ
-define MOB4_3_COUNT 1 -- Ã³Ä¡ ¼ö
-define MAP_INDEX4 1 -- ¸ó½ºÅÍ°¡ ³ª¿À´Â ¸Ê ¹øÈ£
-define MAP_POS4_1_X 500 -- ¸Ê¿¡ ¹İÂ¦ÀÌµµ·Ï º¸ÀÌ´Â ÁÂÇ¥.
+--ê°•ë ¹ìˆ  ì €ì§€1-4--
+define MOB4_1 3911 -- 00ê·€ëª©
+define MOB4_1_COUNT 1 -- ì²˜ì¹˜ ìˆ˜
+define MOB4_2 3912 -- 00ê·€ëª©
+define MOB4_2_COUNT 1 -- ì²˜ì¹˜ ìˆ˜
+define MOB4_3 3913 -- 00ê·€ëª©
+define MOB4_3_COUNT 1 -- ì²˜ì¹˜ ìˆ˜
+define MAP_INDEX4 1 -- ëª¬ìŠ¤í„°ê°€ ë‚˜ì˜¤ëŠ” ë§µ ë²ˆí˜¸
+define MAP_POS4_1_X 500 -- ë§µì— ë°˜ì§ì´ë„ë¡ ë³´ì´ëŠ” ì¢Œí‘œ.
 define MAP_POS4_1_Y 500
 define MAP_POS4_2_X 600
 define MAP_POS4_2_Y 500
 define MAP_POS4_3_X 700
 define MAP_POS4_3_Y 300
-define REWARD4_EXP 44941086 -- º¸»ó : °æÇèÄ¡
-define REWARD4_GOLD 379000 -- º¸»ó : °ñµå
+define REWARD4_EXP 44941086 -- ë³´ìƒ : ê²½í—˜ì¹˜
+define REWARD4_GOLD 379000 -- ë³´ìƒ : ê³¨ë“œ
 
 quest main_quest_lv96 begin
 	state start begin
@@ -109,7 +109,7 @@ quest main_quest_lv96 begin
 			set_state (state1_1)
 		end
 	end
-	------------------------------------°­·É¼ú ÀúÁö1-1------------------------------------
+	------------------------------------ê°•ë ¹ìˆ  ì €ì§€1-1------------------------------------
 	state state1_1 begin
 		when letter begin
 			send_letter(gameforge.main_quest_lv96._010_sendLetter)
@@ -147,7 +147,7 @@ quest main_quest_lv96 begin
 			set_state (state1_2)
 		end
 	end
-	--Äù½ºÆ® ¼öÇà--
+	--í€˜ìŠ¤íŠ¸ ìˆ˜í–‰--
 	state state1_2 begin
 		when letter begin
 			send_letter(gameforge.main_quest_lv96._010_sendLetter)
@@ -177,7 +177,7 @@ quest main_quest_lv96 begin
 			-- clearmapsignal()
 		end
 				
-		--Å¬¸®¾î Àü¿¡ µ¹¾Æ¿Ô´Ù.--
+		--í´ë¦¬ì–´ ì „ì— ëŒì•„ì™”ë‹¤.--
 		when GUARD.chat.gameforge.main_quest_lv96._010_sendLetter begin
 			say_title(mob_name(GUARD))
 			say(gameforge.main_quest_lv96._100_say)
@@ -224,7 +224,7 @@ quest main_quest_lv96 begin
 			say("")
 		end
 		
-		-- Áß°£¿¡ Äù½ºÆ® ¾ÆÀÌÅÛÀ» ¹ö¸± °æ¿ì¸¦ ´ëºñÇÑ ºÎºĞ.
+		-- ì¤‘ê°„ì— í€˜ìŠ¤íŠ¸ ì•„ì´í…œì„ ë²„ë¦´ ê²½ìš°ë¥¼ ëŒ€ë¹„í•œ ë¶€ë¶„.
 		when MOB1_1.kill or MOB1_2.kill or MOB1_3.kill or MOB1_4.kill or MOB1_5.kill or MOB1_6.kill or MOB1_7.kill begin
 			if pc.count_item(ITEM1_1) < ITEM1_1_NEEDED then
 				if	number (1,ITEM1_1_PCT_GET) == 1 then	
@@ -249,7 +249,7 @@ quest main_quest_lv96 begin
 				say("")
 				wait()
 				
-				--º¸»ó
+				--ë³´ìƒ
 				say_title(locale.reward)
 				say_reward(string.format (gameforge.main_quest_lv60._190_sayReward, REWARD1_EXP))
 				say_reward(string.format (gameforge.main_quest_lv60._200_sayReward, REWARD1_GOLD))
@@ -261,7 +261,7 @@ quest main_quest_lv96 begin
 				pc.give_item2(REWARD1_ITEM1, REWARD1_ITEM1_COUNT)
 				
 				set_state (state2_1)
-			else --Áß°£¿¡ ¾ÆÀÌÅÛÀ» »©³õ°í ¿Ô´Ù.
+			else --ì¤‘ê°„ì— ì•„ì´í…œì„ ë¹¼ë†“ê³  ì™”ë‹¤.
 				say_title(mob_name(GUARD))
 				say(gameforge.main_quest_lv96._100_say)
 				say("")
@@ -271,7 +271,7 @@ quest main_quest_lv96 begin
 		end
 	end
 	
-	------------------------------------°­·É¼ú ÀúÁö1-2------------------------------------
+	------------------------------------ê°•ë ¹ìˆ  ì €ì§€1-2------------------------------------
 	state state2_1 begin
 		when letter begin
 			send_letter(gameforge.main_quest_lv96._140_sendLetter)
@@ -337,7 +337,7 @@ quest main_quest_lv96 begin
 			-- setskin(NOWINDOW)
 			-- clearmapsignal()
 		end
-		--Å¬¸®¾î Àü--
+		--í´ë¦¬ì–´ ì „--
 		when GUARD.chat.gameforge.main_quest_lv96._140_sendLetter begin
 			say_title(mob_name(GUARD))
 			say(gameforge.main_quest_lv96._220_say)
@@ -391,7 +391,7 @@ quest main_quest_lv96 begin
 			say("")
 		end
 		
-		-- Áß°£¿¡ Äù½ºÆ® ¾ÆÀÌÅÛÀ» ¹ö¸± °æ¿ì¸¦ ´ëºñÇÑ ºÎºĞ.
+		-- ì¤‘ê°„ì— í€˜ìŠ¤íŠ¸ ì•„ì´í…œì„ ë²„ë¦´ ê²½ìš°ë¥¼ ëŒ€ë¹„í•œ ë¶€ë¶„.
 		when MOB2_1.kill or MOB2_2.kill or MOB2_3.kill or MOB2_4.kill or MOB2_5.kill or MOB2_6.kill or MOB2_7.kill begin
 			if pc.count_item(ITEM2_1) < ITEM2_1_NEEDED or  pc.count_item(ITEM2_2) < ITEM2_2_NEEDED then
 				if	number (1,ITEM2_1_PCT_GET) == 1 then	
@@ -430,7 +430,7 @@ quest main_quest_lv96 begin
 			end
 		end
 	end
-	--ÇĞÀÚ¿¡°Ô·Î
+	--í•™ìì—ê²Œë¡œ
 	state state2_4 begin
 		when letter begin
 			send_letter(gameforge.main_quest_lv96._140_sendLetter)
@@ -463,7 +463,7 @@ quest main_quest_lv96 begin
 		end
 		
 	end
-	--´Ù½Ã °æºñ´ëÀå¿¡°Ô
+	--ë‹¤ì‹œ ê²½ë¹„ëŒ€ì¥ì—ê²Œ
 	state state2_5 begin
 		when letter begin
 			send_letter(gameforge.main_quest_lv96._140_sendLetter)
@@ -489,7 +489,7 @@ quest main_quest_lv96 begin
 			say(gameforge.main_quest_lv96._590_say)
 			say("")
 			wait()
-			--º¸»ó
+			--ë³´ìƒ
 			say_title(locale.reward)
 			say_reward(string.format (gameforge.main_quest_lv60._190_sayReward, REWARD2_EXP))
 			say_reward(string.format (gameforge.main_quest_lv60._200_sayReward, REWARD2_GOLD))
@@ -505,7 +505,7 @@ quest main_quest_lv96 begin
 		end
 	end
 	
-	------------------------------------°­·É¼ú ÀúÁö1-3------------------------------------
+	------------------------------------ê°•ë ¹ìˆ  ì €ì§€1-3------------------------------------
 	state state3_1 begin
 		when letter begin
 			send_letter(gameforge.main_quest_lv96._300_sendLetter)
@@ -597,7 +597,7 @@ quest main_quest_lv96 begin
 		
 		when SCHOLAR.chat.gameforge.main_quest_lv96._300_sendLetter with pc.count_item(ITEM3_1) > 0 begin
 			pc.remove_item (ITEM3_1, 1)
-			if number(1,100) <= ITEM3_1_PCT_CHECK then -- °¨Á¤ ¼º°ø
+			if number(1,100) <= ITEM3_1_PCT_CHECK then -- ê°ì • ì„±ê³µ
 				say_title(mob_name(SCHOLAR ))
 				say(gameforge.main_quest_lv96._370_say)
 				say("")
@@ -621,7 +621,7 @@ quest main_quest_lv96 begin
 					say("")
 					wait()
 					
-					--º¸»ó
+					--ë³´ìƒ
 					say_title(locale.reward)
 					say_reward(string.format (gameforge.main_quest_lv60._190_sayReward, REWARD3_EXP))
 					--say_reward(string.format (gameforge.main_quest_lv60._200_sayReward, REWARD3_GOLD))
@@ -637,7 +637,7 @@ quest main_quest_lv96 begin
 					say(string.format(gameforge.main_quest_lv96._390_say,remain))
 					say("")
 				end
-			else -- °¨Á¤ ½ÇÆĞ
+			else -- ê°ì • ì‹¤íŒ¨
 				say_title(mob_name(SCHOLAR ))
 				say(gameforge.main_quest_lv96._630_say)
 				say("")
@@ -645,7 +645,7 @@ quest main_quest_lv96 begin
 		end
 	end
 	
-	------------------------------------°­·É¼ú ÀúÁö1-4-----------------------------------
+	------------------------------------ê°•ë ¹ìˆ  ì €ì§€1-4-----------------------------------
 	state state4_1 begin
 		when letter begin
 			send_letter(gameforge.main_quest_lv96._400_sendLetter)
@@ -683,7 +683,7 @@ quest main_quest_lv96 begin
 			set_state (state4_2)
 		end
 	end
-	-- Äù½ºÆ® ÁøÇà --
+	-- í€˜ìŠ¤íŠ¸ ì§„í–‰ --
 	state state4_2 begin
 		when letter begin
 			send_letter(gameforge.main_quest_lv96._400_sendLetter)
@@ -721,7 +721,7 @@ quest main_quest_lv96 begin
 			-- clearmapsignal()
 		end
 		
-		-- Å¬¸®¾î Àü¿¡ Å¬¸¯ --
+		-- í´ë¦¬ì–´ ì „ì— í´ë¦­ --
 		when GUARD.chat.gameforge.main_quest_lv96._400_sendLetter begin
 			say_title(mob_name(GUARD ))
 			say(gameforge.main_quest_lv96._500_say)
@@ -826,7 +826,7 @@ quest main_quest_lv96 begin
 			say("")
 			wait()
 			
-			--º¸»ó
+			--ë³´ìƒ
 			say_title(locale.reward)
 			say_reward(string.format (gameforge.main_quest_lv60._190_sayReward, REWARD4_EXP))
 			say_reward(string.format (gameforge.main_quest_lv60._200_sayReward, REWARD4_GOLD))
