@@ -344,7 +344,7 @@ quest deviltower_zone begin
 		game.drop_item(30300, 1)
 			d.clear_regen()
 			d.kill_all()
-			say("상자를 열어보자")
+			say("??? ????")
 			say("")
 			d.spawn_mob(33001, 620, 635)
 	end
@@ -356,29 +356,29 @@ quest deviltower_zone begin
 
 		if pct == 1 then
 			game.drop_item(30302, 1)
-				d.notice("윗층으로의 지도가 나타났다");
+				d.notice("????? ??? ????");
 			else
 				game.drop_item(30301, 1) 
 				d.regen_file("data/dungeon/deviltower7_regen.txt")
 		end
 	end
-		when 33001.chat."왠 해골이..." with pc.in_dungeon() and pc.get_map_index() >= 660000 and pc.get_map_index() < 670000 begin
-			say("내가 사귀타워의 공략에 실패했나 보군..")
-			say("아무리 봐도 내가 밖으로 빠저나갈 방법이 없는 것 같아..")
-			say("여기 누워있는 해골처럼 되는 것이 아닐까..")
-			say("그런데 누구의 해골이지???")
+		when 33001.chat."? ???..." with pc.in_dungeon() and pc.get_map_index() >= 660000 and pc.get_map_index() < 670000 begin
+			say("?? ????? ??? ???? ??..")
+			say("??? ?? ?? ??? ???? ??? ?? ? ??..")
+			say("?? ???? ???? ?? ?? ???..")
+			say("??? ??? ???????")
 			say("")
 
 			wait()
 
-			say("해골을 뒤져볼까요?")
+			say("??? ??????")
 			say("")
 
-			if 1 == select("네", "아니요") then
+			if 1 == select("?", "???") then
 				say("...")
-				say("뒤적뒤적")
+				say("????")
 				say("....")
-				say("쿡!")
+				say("?!")
 
 				wait()
 
@@ -388,7 +388,7 @@ quest deviltower_zone begin
 
 	when 30302.use with pc.in_dungeon() and pc.get_map_index() >= 660000 and pc.get_map_index() < 670000 begin
 		if d.getf( "level" ) != 7 then
-				say("이 지도는 지금 전혀 맞지 않는 것 같다")
+				say("? ??? ?? ?? ?? ?? ? ??")
 			say("")
 			pc.remove_item( "30302", 1)
 			return
@@ -431,9 +431,9 @@ quest deviltower_zone begin
 		timer("devil_jump_9", 6)
 	end
 
-		when 20366.chat."여기서 포기!!?" with pc.get_map_index() >= 660000 and pc.get_map_index() < 670000 begin
+		when 20366.chat."??? ??!!?" with pc.get_map_index() >= 660000 and pc.get_map_index() < 670000 begin
 			say("")
-			say("더 이상은 힘들군, 비석의 힘을 빌려 여기를 벗어나야겠어..")
+			say("? ??? ???, ??? ?? ?? ??? ??????..")
 			say("")
 			wait()
 
