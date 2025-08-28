@@ -33,6 +33,7 @@ def main() -> None:
 	
 	with open("locale_list") as file:
 		for line in file:
+			print(f"Compiling {line}...")
 			r = pre_qc.run(line)
 			if r:
 				filename = os.path.join("pre_qc", line)

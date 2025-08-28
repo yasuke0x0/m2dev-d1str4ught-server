@@ -145,7 +145,7 @@ quest main_quest_lv84 begin
 			pc.give_item2(71025) -- 야공석
 			pc.give_item2(71025) -- 야공석 
 			pc.give_item2(70038) -- 용기의 망토
-			pc.give_item2(71107) -- 천도복�?아
+			pc.give_item2(71107) -- 천도복숭아
 			set_state (__COMPLETE__)
 		end
 	end

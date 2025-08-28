@@ -166,7 +166,7 @@ def run(filename):
 	filename = filename.strip("\n")
 	if filename == "":
 		return
-	with open(filename, "r", encoding="utf-8") as fh:
+	with open(filename, "r") as fh:
 		lines = fh.readlines()
 
 	start = MakeParameterTable(lines, parameter_table, keys)
@@ -180,7 +180,7 @@ def run(filename):
 	out_dir.mkdir(parents=True, exist_ok=True)
 	out_path = out_dir / filename
 
-	with open(out_path, "w", encoding="utf-8", newline="") as f:
+	with open(out_path, "w", newline="") as f:
 		for s in r:
 			f.write(s)
 	return True

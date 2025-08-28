@@ -32,16 +32,16 @@ function resetdelay(v) raw_script("[/DELAY]") end
 -- trim a string
 function trim(s) return (string.gsub(s, "^%s*(.-)%s*$", "%1")) end
 
--- minimap? ???? ??
+-- minimap에 동그라미 표시
 function addmapsignal(x,y) raw_script("[ADDMAPSIGNAL x;"..x.."|y;"..y.."]") end
 
--- minimap ????? ?? ???
+-- minimap 동그라미들 모두 클리어
 function clearmapsignal() raw_script("[CLEARMAPSIGNAL]") end
 
--- ??????? ??? ??? ?? ??? ???.
+-- 클라이언트에서 보여줄 대화창 배경 그림을 정한다.
 function setbgimage(src) raw_script("[BGIMAGE src;") raw_script(src) raw_script("]") end
 
--- ???? ???? ????.
+-- 대화창에 이미지를 보여준다.
 function addimage(x,y,src) raw_script("[IMAGE x;"..x.."|y;"..y) raw_script("|src;") raw_script(src) raw_script("]") end
 
 -- generate when a linebreak in the functions: d.notice,notice,notice_all
@@ -284,13 +284,13 @@ end
 
 
 function giveup_quest_menu(title)
-    local s=select("????", "????")
+    local s=select("진행한다", "포기한다")
     if 2==s then 
-    say(title.." ???? ???")
-    say("?????????")
-    local s=select("?, ?????", "????")
+    say(title.." 퀘스트를 정말로")
+    say("포기하시겠습니까?")
+    local s=select("네, 그렇습니다", "아닙니다")
     if 1==s then
-        say(title.."???? ??????")
+        say(title.."퀘스트를 포기했습니다")
         restart_quest()
     end
     end
@@ -339,11 +339,11 @@ SURA2_NPC_LIST 		= {20305, 20325, 20345, }
 SHAMAN1_NPC_LIST 	= {20306, 20326, 20346, }
 SHAMAN2_NPC_LIST 	= {20307, 20327, 20347, }
 
-function skill_group_dialog(e, j, g) -- e = ??, j = ??, g = ??
-    e = 1 -- XXX ???? ???? ??? ??? ?????
+function skill_group_dialog(e, j, g) -- e = 제국, j = 직업, g = 그룹
+    e = 1 -- XXX 메시지가 나라별로 있다가 하나로 통합되었음
     
 
-    -- ?? ????? ?? ??? ??
+    -- 다른 직업이거나 다른 제국일 경우
     if pc.job != j then
         say(locale.skill_group.dialog[e][pc.job][3])
     elseif pc.get_skill_group() == 0 then
@@ -478,7 +478,7 @@ setmetatable(pc,{__index=pc_index})
 setmetatable(npc,{__index=npc_index})
 setmetatable(item,{__index=item_index})
 
---coroutine? ??? ??? ??
+--coroutine을 이용한 선택항 처리
 function select(...)
     return q.yield('select', arg)
 end
@@ -487,7 +487,7 @@ function select_table(table)
     return q.yield('select', table)
 end
 
--- coroutine? ??? ?? ?? ????
+-- coroutine을 이용한 다음 엔터 기다리기
 function wait()
     q.yield('wait')
 end
@@ -505,7 +505,7 @@ function select_item()
     return q.yield('select_item')
 end
 
---?? ?? ??? ??? ??
+--전역 변수 접근과 관련된 계열
 NOWINDOW = 0
 NORMAL = 1
 CINEMATIC = 2
@@ -617,12 +617,12 @@ apply = {
     ["NORMAL_HIT_DEFEND_BONUS"] = 74,
 }
 
--- ??? ??? -_-
+-- 레벨업 퀘스트 -_-
 special = {}
 
 special.fortune_telling = 
 {
---  { prob	??	item	money	remove money
+--  { prob	크리	item	money	remove money
     { 1,	0,	20,	20,	0	}, -- 10
     { 499,	0,	10,	10,	0	}, -- 5
     { 2500,	0,	5,	5,	0	}, -- 1
@@ -1000,13 +1000,13 @@ special.levelup_reward1 =
 {
     -- warrior assassin  sura  shaman
     {     0,        0,      0,      0 },
-    { 11200,    11400,  11600,  11800 }, -- ??
-    { 12200,    12340,  12480,  12620 }, -- ??
-    { 13000,    13000,  13000,  13000 }  -- ??
+    { 11200,    11400,  11600,  11800 }, -- 갑옷
+    { 12200,    12340,  12480,  12620 }, -- 투구
+    { 13000,    13000,  13000,  13000 }  -- 방패
 }
 
--- levelup_reward1 ??? ???? ??? ???? ??
--- ???? ???? ???? ??.
+-- levelup_reward1 테이블 크기보다 레벨이 높아지면 아래
+-- 테이블을 이용하여 아이템을 준다.
 special.levelup_reward3 = {
     -- pct   item #  item count
     {   33,  27002,  10 }, -- 25%
@@ -1118,13 +1118,13 @@ special.levelup_reward_item_21 =
 }
 
 special.warp_to_pos = {
--- ???
+-- 승룡곡
     {
     { 402100, 673900 }, 
     { 270400, 739900 },
     { 321300, 808000 },
     },
---????
+--도염화지
     {
 --A 5994 7563 
 --B 5978 6222
@@ -1133,7 +1133,7 @@ special.warp_to_pos = {
     { 597800, 622200 },
     { 730700, 689800 },
     },
---????
+--영비사막
     {
 --A 2178 6272
     { 217800, 627200 },
@@ -1142,7 +1142,7 @@ special.warp_to_pos = {
 --C 3440 5025
     { 344000, 502500 },
     },
---???
+--서한산
     {
 --A 4342 2906
     { 434200, 290600 },
@@ -1606,105 +1606,105 @@ POINT_HP                   = 5
 POINT_MAX_HP               = 6
 POINT_SP                   = 7
 POINT_MAX_SP               = 8  
-POINT_STAMINA              = 9  --????
-POINT_MAX_STAMINA          = 10 --?? ????
+POINT_STAMINA              = 9  --스테미너
+POINT_MAX_STAMINA          = 10 --최대 스테미너
 
 POINT_GOLD                 = 11
-POINT_ST                   = 12 --??
-POINT_HT                   = 13 --??
-POINT_DX                   = 14 --???
-POINT_IQ                   = 15 --???
+POINT_ST                   = 12 --근력
+POINT_HT                   = 13 --체력
+POINT_DX                   = 14 --민첩성
+POINT_IQ                   = 15 --정신력
 POINT_DEF_GRADE			= 16
-POINT_ATT_SPEED            = 17 --????
-POINT_ATT_GRADE			= 18 --??? MAX
-POINT_MOV_SPEED            = 19 --????
-POINT_CLIENT_DEF_GRADE		= 20 --????
-POINT_CASTING_SPEED        = 21 --???? (?????*100) / (100 + ??) = ?? ??? ??
-POINT_MAGIC_ATT_GRADE      = 22 --?????
-POINT_MAGIC_DEF_GRADE      = 23 --?????
-POINT_EMPIRE_POINT         = 24 --????
-POINT_LEVEL_STEP           = 25 --? ????? ??.. (1 2 3 ? ? ?? 4 ?? ?? ?)
-POINT_STAT                 = 26 --??? ?? ? ?? ??
-POINT_SUB_SKILL			= 27 --?? ?? ???
-POINT_SKILL				= 28 --??? ?? ???
-POINT_WEAPON_MIN			= 29 --?? ?? ???
-POINT_WEAPON_MAX			= 30 --?? ?? ???
-POINT_PLAYTIME             = 31 --?????
-POINT_HP_REGEN             = 32 --HP ???
-POINT_SP_REGEN             = 33 --SP ???
+POINT_ATT_SPEED            = 17 --공격속도
+POINT_ATT_GRADE			= 18 --공격력 MAX
+POINT_MOV_SPEED            = 19 --이동속도
+POINT_CLIENT_DEF_GRADE		= 20 --방어등급
+POINT_CASTING_SPEED        = 21 --주문속도 (쿨다운타임*100) / (100 + 이값) = 최종 쿨다운 타임
+POINT_MAGIC_ATT_GRADE      = 22 --마법공격력
+POINT_MAGIC_DEF_GRADE      = 23 --마법방어력
+POINT_EMPIRE_POINT         = 24 --제국점수
+POINT_LEVEL_STEP           = 25 --한 레벨에서의 단계.. (1 2 3 될 때 보상 4 되면 레벨 업)
+POINT_STAT                 = 26 --능력치 올릴 수 있는 개수
+POINT_SUB_SKILL			= 27 --보조 스킬 포인트
+POINT_SKILL				= 28 --액티브 스킬 포인트
+POINT_WEAPON_MIN			= 29 --무기 최소 데미지
+POINT_WEAPON_MAX			= 30 --무기 최대 데미지
+POINT_PLAYTIME             = 31 --플레이시간
+POINT_HP_REGEN             = 32 --HP 회복률
+POINT_SP_REGEN             = 33 --SP 회복률
 
-POINT_BOW_DISTANCE         = 34 --? ???? ??? (meter)
+POINT_BOW_DISTANCE         = 34 --활 사정거리 증가치 (meter)
 
-POINT_HP_RECOVERY          = 35 --?? ?? ???
-POINT_SP_RECOVERY          = 36 --??? ?? ???
+POINT_HP_RECOVERY          = 35 --체력 회복 증가량
+POINT_SP_RECOVERY          = 36 --정신력 회복 증가량
 
-POINT_POISON_PCT           = 37 --? ??
-POINT_STUN_PCT             = 38 --?? ??
-POINT_SLOW_PCT             = 39 --??? ??
-POINT_CRITICAL_PCT         = 40 --???? ??
-POINT_PENETRATE_PCT        = 41 --???? ??
-POINT_CURSE_PCT            = 42 --?? ??
+POINT_POISON_PCT           = 37 --독 확률
+POINT_STUN_PCT             = 38 --기절 확률
+POINT_SLOW_PCT             = 39 --슬로우 확률
+POINT_CRITICAL_PCT         = 40 --크리티컬 확률
+POINT_PENETRATE_PCT        = 41 --관통타격 확률
+POINT_CURSE_PCT            = 42 --저주 확률
 
-POINT_ATTBONUS_HUMAN       = 43 --???? ??
-POINT_ATTBONUS_ANIMAL      = 44 --???? ??? % ??
-POINT_ATTBONUS_ORC         = 45 --???? ??? % ??
-POINT_ATTBONUS_MILGYO      = 46 --???? ??? % ??
-POINT_ATTBONUS_UNDEAD      = 47 --???? ??? % ??
-POINT_ATTBONUS_DEVIL       = 48 --??(??)?? ??? % ??
-POINT_ATTBONUS_INSECT      = 49 --???
-POINT_ATTBONUS_FIRE        = 50 --???
-POINT_ATTBONUS_ICE         = 51 --???
-POINT_ATTBONUS_DESERT      = 52 --???
-POINT_ATTBONUS_MONSTER     = 53 --?? ????? ??
-POINT_ATTBONUS_WARRIOR     = 54 --???? ??
-POINT_ATTBONUS_ASSASSIN	= 55 --???? ??
-POINT_ATTBONUS_SURA		= 56 --???? ??
-POINT_ATTBONUS_SHAMAN		= 57 --???? ??
+POINT_ATTBONUS_HUMAN       = 43 --인간에게 강함
+POINT_ATTBONUS_ANIMAL      = 44 --동물에게 데미지 % 증가
+POINT_ATTBONUS_ORC         = 45 --웅귀에게 데미지 % 증가
+POINT_ATTBONUS_MILGYO      = 46 --밀교에게 데미지 % 증가
+POINT_ATTBONUS_UNDEAD      = 47 --시체에게 데미지 % 증가
+POINT_ATTBONUS_DEVIL       = 48 --마귀(악마)에게 데미지 % 증가
+POINT_ATTBONUS_INSECT      = 49 --벌레족
+POINT_ATTBONUS_FIRE        = 50 --화염족
+POINT_ATTBONUS_ICE         = 51 --빙설족
+POINT_ATTBONUS_DESERT      = 52 --사막족
+POINT_ATTBONUS_MONSTER     = 53 --모든 몬스터에게 강함
+POINT_ATTBONUS_WARRIOR     = 54 --무사에게 강함
+POINT_ATTBONUS_ASSASSIN	= 55 --자객에게 강함
+POINT_ATTBONUS_SURA		= 56 --수라에게 강함
+POINT_ATTBONUS_SHAMAN		= 57 --무당에게 강함
 
 -- ADD_TRENT_MONSTER
-POINT_ATTBONUS_TREE     	= 58 --???? ?? 20050729.myevan UNUSED5 
+POINT_ATTBONUS_TREE     	= 58 --나무에게 강함 20050729.myevan UNUSED5 
 -- END_OF_ADD_TRENT_MONSTER
-POINT_RESIST_WARRIOR		= 59 --???? ??
-POINT_RESIST_ASSASSIN		= 60 --???? ??
-POINT_RESIST_SURA			= 61 --???? ??
-POINT_RESIST_SHAMAN		= 62 --???? ??
+POINT_RESIST_WARRIOR		= 59 --무사에게 저항
+POINT_RESIST_ASSASSIN		= 60 --자객에게 저항
+POINT_RESIST_SURA			= 61 --수라에게 저항
+POINT_RESIST_SHAMAN		= 62 --무당에게 저항
 
-POINT_STEAL_HP             = 63 --??? ??
-POINT_STEAL_SP             = 64 --??? ??
+POINT_STEAL_HP             = 63 --생명력 흡수
+POINT_STEAL_SP             = 64 --정신력 흡수
 
-POINT_MANA_BURN_PCT        = 65 --?? ?
+POINT_MANA_BURN_PCT        = 65 --마나 번
 
---/ ??? ??? =/
+--/ 피해시 보너스 =/
 
-POINT_DAMAGE_SP_RECOVER    = 66 --???? ? ??? ?? ??
+POINT_DAMAGE_SP_RECOVER    = 66 --공격당할 시 정신력 회복 확률
 
-POINT_BLOCK                = 67 --???
-POINT_DODGE                = 68 --???
+POINT_BLOCK                = 67 --블럭율
+POINT_DODGE                = 68 --회피율
 
 POINT_RESIST_SWORD         = 69
 POINT_RESIST_TWOHAND       = 70
 POINT_RESIST_DAGGER        = 71
 POINT_RESIST_BELL          = 72
 POINT_RESIST_FAN           = 73
-POINT_RESIST_BOW           = 74  --??   ??   : ??? ??
-POINT_RESIST_FIRE          = 75  --??   ??   : ????? ?? ??? ??
-POINT_RESIST_ELEC          = 76  --??   ??   : ????? ?? ??? ??
-POINT_RESIST_MAGIC         = 77  --??   ??   : ????? ?? ??? ??
-POINT_RESIST_WIND          = 78  --??   ??   : ????? ?? ??? ??
+POINT_RESIST_BOW           = 74  --화살   저항   : 대미지 감소
+POINT_RESIST_FIRE          = 75  --화염   저항   : 화염공격에 대한 대미지 감소
+POINT_RESIST_ELEC          = 76  --전기   저항   : 전기공격에 대한 대미지 감소
+POINT_RESIST_MAGIC         = 77  --술법   저항   : 모든술법에 대한 대미지 감소
+POINT_RESIST_WIND          = 78  --바람   저항   : 바람공격에 대한 대미지 감소
 
-POINT_REFLECT_MELEE        = 79 --?? ??
+POINT_REFLECT_MELEE        = 79 --공격 반사
 
---/ ?? ??? =/
-POINT_REFLECT_CURSE		= 80 --?? ??
-POINT_POISON_REDUCE		= 81 --???? ??
+--/ 특수 피해시 =/
+POINT_REFLECT_CURSE		= 80 --저주 반사
+POINT_POISON_REDUCE		= 81 --독데미지 감소
 
---/ ? ??? =/
-POINT_KILL_SP_RECOVER		= 82 --? ??? MP ??
+--/ 적 소멸시 =/
+POINT_KILL_SP_RECOVER		= 82 --적 소멸시 MP 회복
 POINT_EXP_DOUBLE_BONUS		= 83
 POINT_GOLD_DOUBLE_BONUS		= 84
 POINT_ITEM_DROP_BONUS		= 85
 
---/ ?? ?? =/
+--/ 회복 관련 =/
 POINT_POTION_BONUS			= 86
 POINT_KILL_HP_RECOVERY		= 87
 
@@ -1728,7 +1728,7 @@ POINT_RESIST_NORMAL_DAMAGE		= 99
 
 POINT_HIT_HP_RECOVERY		= 100
 POINT_HIT_SP_RECOVERY 		= 101
-POINT_MANASHIELD			= 102 --???? ??? ?? ???? ?? ??
+POINT_MANASHIELD			= 102 --흑신수호 스킬에 의한 마나쉴드 효과 정도
 
 POINT_PARTY_BUFFER_BONUS		= 103
 POINT_PARTY_SKILL_MASTER_BONUS	= 104
@@ -1737,35 +1737,35 @@ POINT_HP_RECOVER_CONTINUE		= 105
 POINT_SP_RECOVER_CONTINUE		= 106
 
 POINT_STEAL_GOLD			= 107 
-POINT_POLYMORPH			= 108 --??? ??? ??
-POINT_MOUNT				= 109 --???? ??? ??
+POINT_POLYMORPH			= 108 --변신한 몬스터 번호
+POINT_MOUNT				= 109 --타고있는 몬스터 번호
 
 POINT_PARTY_HASTE_BONUS		= 110
 POINT_PARTY_DEFENDER_BONUS		= 111
-POINT_STAT_RESET_COUNT		= 112 --?? ?? ??? ?? ?? ?? ??? (1? 1??? ????)
+POINT_STAT_RESET_COUNT		= 112 --피의 단약 사용을 통한 스텟 리셋 포인트 (1당 1포인트 리셋가능)
 
 POINT_HORSE_SKILL			= 113
 
-POINT_MALL_ATTBONUS		= 114 --??? +x%
-POINT_MALL_DEFBONUS		= 115 --??? +x%
-POINT_MALL_EXPBONUS		= 116 --??? +x%
-POINT_MALL_ITEMBONUS		= 117 --??? ??? x/10?
-POINT_MALL_GOLDBONUS		= 118 --? ??? x/10?
+POINT_MALL_ATTBONUS		= 114 --공격력 +x%
+POINT_MALL_DEFBONUS		= 115 --방어력 +x%
+POINT_MALL_EXPBONUS		= 116 --경험치 +x%
+POINT_MALL_ITEMBONUS		= 117 --아이템 드롭율 x/10배
+POINT_MALL_GOLDBONUS		= 118 --돈 드롭율 x/10배
 
-POINT_MAX_HP_PCT			= 119 --????? +x%
-POINT_MAX_SP_PCT			= 120 --????? +x%
+POINT_MAX_HP_PCT			= 119 --최대생명력 +x%
+POINT_MAX_SP_PCT			= 120 --최대정신력 +x%
 
-POINT_SKILL_DAMAGE_BONUS		= 121 --?? ??? *(100+x)%
-POINT_NORMAL_HIT_DAMAGE_BONUS	= 122 --?? ??? *(100+x)%
+POINT_SKILL_DAMAGE_BONUS		= 121 --스킬 데미지 *(100+x)%
+POINT_NORMAL_HIT_DAMAGE_BONUS	= 122 --평타 데미지 *(100+x)%
 
 -- DEFEND_BONUS_ATTRIBUTES
-POINT_SKILL_DEFEND_BONUS		= 123 --?? ?? ???
-POINT_NORMAL_HIT_DEFEND_BONUS	= 124 --?? ?? ???
+POINT_SKILL_DEFEND_BONUS		= 123 --스킬 방어 데미지
+POINT_NORMAL_HIT_DEFEND_BONUS	= 124 --평타 방어 데미지
 -- END_OF_DEFEND_BONUS_ATTRIBUTES
 
 -- PC_BANG_ITEM_ADD 
-POINT_PC_BANG_EXP_BONUS		= 125 --PC? ?? ??? ???
-POINT_PC_BANG_DROP_BONUS		= 126 --PC? ?? ??? ???
+POINT_PC_BANG_EXP_BONUS		= 125 --PC방 전용 경험치 보너스
+POINT_PC_BANG_DROP_BONUS		= 126 --PC방 전용 드롭률 보너스
 -- END_PC_BANG_ITEM_ADD
 -- POINT_MAX_NUM = 128	common/length.h
 -- point type start
