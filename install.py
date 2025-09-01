@@ -3,6 +3,7 @@ sys.dont_write_bytecode = True
 
 import os
 import shutil
+import subprocess
 import channels
 
 GAMEDIR = os.getcwd()
@@ -61,12 +62,21 @@ def try_symlink(target, link_name, is_dir):
 	try:
 		if os.path.lexists(link_name):
 			os.remove(link_name)
-		if not is_dir and os.name == "nt":
-			target += ".exe"
-			link_name += ".exe"
-		os.symlink(target, link_name, target_is_directory=is_dir)
-	except OSError as e:
-		print(f"> Failed to create symlink: {link_name} -> {target} ({e})")
+		
+		if os.name == "nt":  # Windows
+			if is_dir:
+				# For directories, create junction
+				import subprocess
+				subprocess.run(["mklink", "/J", link_name, target], shell=True, check=True)
+			else:
+				# For files, copy instead of symlink
+				target += ".exe"
+				link_name += ".exe"
+				shutil.copy2(target, link_name)
+		else:  # Unix-like systems
+			os.symlink(target, link_name, target_is_directory=is_dir)
+	except (OSError, subprocess.CalledProcessError) as e:
+		print(f"> Failed to create link: {link_name} -> {target} ({e})")
 
 ## Clearing Up Old Files
 channels_dir = os.path.join(GAMEDIR, "channels")
