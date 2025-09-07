@@ -1,9 +1,9 @@
 DB_PORT: 9000
-ACCOUNT_SQL: localhost mt2 mt2@pw account
-PLAYER_SQL: localhost mt2 mt2@pw player
-COMMON_SQL: localhost mt2 mt2@pw common
-LOG_SQL: 	localhost mt2 mt2@pw log
-TABLE_POSTFIX: 
+ACCOUNT_SQL: localhost metin2 password account
+PLAYER_SQL: localhost metin2 password player
+COMMON_SQL: localhost metin2 password common
+LOG_SQL: 	localhost metin2 password log
+TABLE_POSTFIX:
 PASSES_PER_SEC: 60
 SAVE_EVENT_SECOND_CYCLE: 180
 PING_EVENT_SECOND_CYCLE: 180

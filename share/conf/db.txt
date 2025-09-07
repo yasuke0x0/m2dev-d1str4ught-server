@@ -1,9 +1,9 @@
 WELCOME_MSG = "Database connector is running..."
 
-SQL_ACCOUNT 	= "localhost account mt2 mt2@pw 0"
-SQL_PLAYER 		= "localhost player mt2 mt2@pw 0"
-SQL_COMMON 		= "localhost common mt2 mt2@pw 0"
-SQL_HOTBACKUP 	= "localhost hotbackup mt2 mt2@pw 0"
+SQL_ACCOUNT 	= "localhost account metin2 password 0"
+SQL_PLAYER 		= "localhost player metin2 password 0"
+SQL_COMMON 		= "localhost common metin2 password 0"
+SQL_HOTBACKUP 	= "localhost hotbackup metin2 password 0"
 
 TABLE_POSTFIX = ""
 
