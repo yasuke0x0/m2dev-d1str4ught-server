@@ -1,4 +1,4 @@
-DB_HOST: 127.0.0.1
+DB_ADDR: 127.0.0.1
 DB_PORT: 9000
 ACCOUNT_SQL: 127.0.0.1 metin2 password account
 PLAYER_SQL: 127.0.0.1 metin2 password player
