@@ -1,9 +1,9 @@
-DB_ADDR: 127.0.0.1
+DB_ADDR: localhost
 DB_PORT: 9000
-ACCOUNT_SQL: 127.0.0.1 metin2 password account
-PLAYER_SQL: 127.0.0.1 metin2 password player
-COMMON_SQL: 127.0.0.1 metin2 password common
-LOG_SQL: 	127.0.0.1 metin2 password log
+ACCOUNT_SQL: localhost metin2 password account
+PLAYER_SQL: localhost metin2 password player
+COMMON_SQL: localhost metin2 password common
+LOG_SQL: 	localhost metin2 password log
 TABLE_POSTFIX:
 PASSES_PER_SEC: 60
 SAVE_EVENT_SECOND_CYCLE: 180
@@ -11,7 +11,7 @@ PING_EVENT_SECOND_CYCLE: 180
 VIEW_RANGE: 8000
 CHECK_MULTIHACK: 0
 ADMINPAGE_PASSWORD: metin2adminpass
-ADMINPAGE_IP: 127.0.0.1
+ADMINPAGE_IP: localhost
 SPEEDHACK_LIMIT_COUNT: 300
 SPEEDHACK_LIMIT_BONUS: 80
 PK_PROTECT_LEVEL: 15
